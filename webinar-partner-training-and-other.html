@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webinar, Partner Training, and Other Certificates Generator Beta</title>
+    <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> -->
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="d-flex flex-column-fluid align-items-start container-xxl">
+        <div class="content flex-row-fluid py-10">
+            <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework">
+                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <div class="card card-flush py-4">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h1>Webinar, Partner Training, and Other Certificates Generator <span class="badge badge-secondary">Beta</span></h1>
+                                </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="mb-5 fv-row mt-10">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Title of Certificate:</label>
+                                            <select name="badge_option" id="badge_option" class="form-select" data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
+                          <option value="" id="">Certificate of Attendance</option>
+                          <option value="" id="">Certificate of Completion</option>
+                          <option value="" id="">Certificate of Participation</option>
+                          <option value="" id="">Certificate of Appreciation</option>
+                        </select>
+                                            <div class="text-muted fs-7">e.g Certificate of Attendance / Completion / Participation / Appreciation</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Certification Statement:</label>
+                                            <textarea type="text" name="" id="" class="form-control mb-2" placeholder="Please enter the certification statement that will appear on the certificate."></textarea>
+                                            <div class="text-muted fs-7">e.g This certificate is awarded to recognize the completion of...</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Name of Attendee:</label>
+                                            <input type="text" name="" id="" class="form-control mb-2" placeholder="Please enter the name of the attendee who will receive the certificate." />
+                                            <div class="text-muted fs-7">e.g Jethro Jorolan</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Brand:</label>
+                                            <select name="" id="" class="form-select" data-placeholder="Please select the brand associated with the certificate.">
+                          <option value="" id="">Bitdefender</option>
+                          <option value="" id="">SonicWall</option>
+                          <option value="" id="">PRTG Network Monitor</option>
+                          <option value="" id="">Faronics</option>
+                          <option value="" id="">SecPoint</option>
+                          <option value="" id="">Easy NAC</option>
+                          <option value="" id="">TeamViewer</option>
+                          <option value="" id="">Veriato</option>
+                          <option value="" id="">RDX Tandberg Data</option>
+                          <option value="" id="">ActiveImage Protector</option>
+                          <option value="" id="">Axigen</option>
+                          <option value="" id="">Infosec</option>
+                        </select>
+                                            <div class="text-muted fs-7">e.g. Bitdefender, SonicWall, PRTG Network Monitor</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Date of Issuance:</label>
+                                            <input type="date" name="" id="" class="form-control mb-2" />
+                                            <div class="text-muted fs-7">Please enter the date when the certificate will be issued.</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Upload Certificate Template with Signature:</label>
+                                            <input type="file" name="certificate_template" id="certificate_template" class="form-control mb-2" placeholder="Please upload the certificate template that includes the appropriate signature." />
+                                            <div class="text-muted fs-7">Click <a href="" class="link-primary">here</a> on how to obtain the template</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container"></div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="reset" class="btn btn-light me-5">Clear All</button>
+                        <button class="btn btn-primary" href="#preview" onclick="generate_data(); return true">
+                <span class="indicator-label"> Generate Certificate</span>
+                <span class="indicator-progress">
+                  Please wait...
+                  <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                </span>
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/scripts.bundle.js "></script>
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+</body>
+
+</html>
