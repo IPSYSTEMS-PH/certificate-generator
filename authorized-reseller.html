@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Authorized Reseller Certificates Generator Beta</title>
   <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> -->
+
+  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,8 +20,8 @@
 <body>
   <div class="d-flex flex-column-fluid align-items-start container-xxl">
     <div class="content flex-row-fluid py-10">
-      <diiv class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
-        novalidate="novalidate" id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
+      <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
+        id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
         <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
           <div class="d-flex flex-column gap-7 gap-lg-10">
             <div class="card card-flush py-4">
@@ -182,7 +184,7 @@
           </div>
           <div class="d-flex justify-content-end">
             <button type="reset" class="btn btn-light me-5">Clear All</button>
-            <button class="btn btn-primary" onclick="generate_data();">
+            <button class="btn btn-primary" type="submit" id="authorized-reseller-submit">
               <span class="indicator-label"> Generate Certificate</span>
               <span class="indicator-progress">
                 Please wait...
@@ -191,81 +193,19 @@
             </button>
           </div>
         </div>
+      </div>
     </div>
   </div>
-  </div>
-  <script src="assets/js/scripts.bundle.js "></script>
   <script src="assets/plugins/global/plugins.bundle.js"></script>
+  <script src="assets/js/scripts.bundle.js "></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
 
   <script src="https://unpkg.com/ulid@2.3.0/dist/index.umd.js"></script>
   <script>
-    function generate_data() {
-      // FormValidation.formValidation(
-      //   document.getElementById('authorized-reseller-form'), {
-      //   fields: {
-      //     business_name: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Business Name is required"
-      //         }
-      //       }
-      //     },
-      //     business_address: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Business Address is required"
-      //         }
-      //       }
-      //     },
-      //     certificate_validity: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Certificate Validity Date is required"
-      //         }
-      //       }
-      //     },
-      //     badge_option: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Badge is required"
-      //         }
-      //       }
-      //     },
-      //     brands: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Brands is required"
-      //         }
-      //       }
-      //     },
-      //     ci_fullname: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Certificate Issuer Full Nameis required"
-      //         }
-      //       }
-      //     },
-      //     ci_position: {
-      //       validators: {
-      //         notEmpty: {
-      //           message: "Certificate Issuer Position is required"
-      //         }
-      //       }
-      //     }
-      //   },
-      //   plugins: {
-      //     trigger: new FormValidation.plugins.Trigger,
-      //     bootstrap: new FormValidation.plugins.Bootstrap5({
-      //       rowSelector: ".fv-row",
-      //       eleInvalidClass: "",
-      //       eleValidClass: ""
-      //     })
-      //   }
-      // }
-      // );
+    "use strict";
 
+    function generate_data() {
       var jsPDF = window.jspdf.jsPDF;
 
       ///Variables
@@ -384,7 +324,132 @@
       });
       doc.save(business_name.value + ".pdf");
     }
+
+
+    // Class definition
+    var CertificateGenerator = function () {
+      // Private variables
+      var form = document.getElementById('authorized-reseller-form');
+      var submitButton = document.getElementById('authorized-reseller-submit');
+      var validation;
+
+      // Private functions
+      var initValidation = function () {
+        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+        validation = FormValidation.formValidation(
+          form, {
+          fields: {
+            business_name: {
+              validators: {
+                notEmpty: {
+                  message: "Business Name is required"
+                }
+              }
+            },
+            business_address: {
+              validators: {
+                notEmpty: {
+                  message: "Business Address is required"
+                }
+              }
+            },
+            certificate_validity: {
+              validators: {
+                notEmpty: {
+                  message: "Certificate Validity Date is required"
+                }
+              }
+            },
+            badge_option: {
+              validators: {
+                notEmpty: {
+                  message: "Badge is required"
+                }
+              }
+            },
+            brands: {
+              validators: {
+                notEmpty: {
+                  message: "Brands is required"
+                }
+              }
+            },
+            ci_fullname: {
+              validators: {
+                notEmpty: {
+                  message: "Certificate Issuer Full Nameis required"
+                }
+              }
+            },
+            ci_position: {
+              validators: {
+                notEmpty: {
+                  message: "Certificate Issuer Position is required"
+                }
+              }
+            }
+          },
+          plugins: {
+            trigger: new FormValidation.plugins.Trigger(),
+            submitButton: new FormValidation.plugins.SubmitButton(),
+            // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
+            bootstrap: new FormValidation.plugins.Bootstrap5({
+              rowSelector: '.fv-row',
+              eleInvalidClass: '',
+              eleValidClass: ''
+            })
+          }
+        }
+        );
+
+      }
+
+      var handleForm = function () {
+        submitButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          validation.validate().then(function (status) {
+            if (status == 'Valid') {
+              swal.fire({
+                text: "Thank you! You've updated your basic info",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Ok, got it!",
+                customClass: {
+                  confirmButton: "btn fw-bold btn-light-primary"
+                }
+
+              });
+              generate_data();
+            } else {
+              swal.fire({
+                text: "Sorry, looks like there are some errors detected, please try again.",
+                icon: "error",
+                buttonsStyling: false,
+                confirmButtonText: "Ok, got it!",
+                customClass: {
+                  confirmButton: "btn fw-bold btn-light-primary"
+                }
+              });
+            }
+          });
+        });
+      }
+
+      // Public methods
+      return {
+        init: function () {
+          initValidation();
+          handleForm();
+        }
+      }
+    }();
+
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+      CertificateGenerator.init();
+    });
   </script>
+
 </body>
 
 </html>
