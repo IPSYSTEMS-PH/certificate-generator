@@ -102,6 +102,15 @@
                       <label class="required form-label">Brands</label>
                       <div class="text-muted fs-7 mb-5">Select all applicable brands from the list below</div>
 
+                    </div>
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="mb-5 fv-row">
+                  <div class="d-flex flex-wrap">
+
+                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+
                       <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="bitdefender" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> Bitdefender </label>
@@ -118,6 +127,9 @@
                         <input class="form-check-input" type="checkbox" value="faronics" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> Faronics </label>
                       </div>
+                    </div>
+
+                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                       <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="secpoint" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> SecPoint </label>
@@ -126,7 +138,6 @@
                         <input class="form-check-input" type="checkbox" value="easynac" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> Easy NAC </label>
                       </div>
-
                       <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="teamviewer" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> TeamViewer </label>
@@ -135,10 +146,13 @@
                         <input class="form-check-input" type="checkbox" value="veriato" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> Veriato </label>
                       </div>
+                    </div>
+                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                       <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="rdx" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> RDX Tandberg Data </label>
                       </div>
+
                       <div class="form-check mb-5">
                         <input class="form-check-input" type="checkbox" value="activeimage" id="brands" name="brands" />
                         <label class="form-check-label" for="brands"> ActiveImage Protector </label>
@@ -153,6 +167,8 @@
                       </div>
                     </div>
                     <div class="fv-row w-100 flex-md-root"></div>
+                    <div class="fv-row w-100 flex-md-root"></div>
+
                   </div>
                 </div>
                 <div class="mb-5 fv-row">
@@ -227,6 +243,16 @@
       } else {
         // Handle other cases
       }
+
+      const dateStr = certificate_validity.value;
+      const date = new Date(dateStr);
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      const formattedDate = date.toLocaleDateString('en-US', options);
+
 
       var fontFile1 = "Poppins-SemiBold.ttf";
       var fontBase641 = "data:application/x-font-ttf;base64," + btoa(fontFile1);
@@ -310,7 +336,7 @@
       });
       //doc.setFont("SourceSansPro", "normal");
       doc.setFontSize(10);
-      doc.text("We are truly grateful that you chose to do business with us, and we look forward to a fruitful and long-lasting partnership with you. This certification is valid until " + certificate_validity.value + ".", 29, 212, {
+      doc.text("We are truly grateful that you chose to do business with us, and we look forward to a fruitful and long-lasting partnership with you. This certification is valid until " + formattedDate + ".", 29, 212, {
         maxWidth: 148,
         lineHeightFactor: 1.5,
       });
