@@ -2,479 +2,502 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authorized Reseller Certificates Generator Beta</title>
-  <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authorized Reseller Certificates Generator Beta</title>
+    <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> -->
 
-  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
-    rel="stylesheet" />
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
-  <div class="d-flex flex-column-fluid align-items-start container-xxl">
-    <div class="content flex-row-fluid py-10">
-      <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
-        id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
-        <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
-          <div class="d-flex flex-column gap-7 gap-lg-10">
-            <div class="card card-flush py-4">
-              <div class="card-header">
-                <div class="card-title">
-                  <h1>Authorized Reseller Certificates Generator <span class="badge badge-secondary">Beta</span></h1>
-                </div>
-              </div>
-              <div class="card-body pt-0">
-                <h2 class="mb-10 mt-10">Business Details</h2>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class="required form-label">Business Name</label>
-                      <input type="text" name="business_name" id="business_name" class="form-control mb-2"
-                        placeholder="Enter business name here" value="IPSYSTEMS, Inc." />
-                      <div class="text-muted fs-7">e.g. "ABC Corporation"</div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-                  </div>
-                </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class="required form-label">Business Address</label>
-                      <textarea type="text" name="business_address" id="business_address" class="form-control mb-2"
-                        placeholder="Enter business address here">1004 Antel Global Corporate Center #3 Julia Vargas Ave., Ortigas Center Pasig City, Philippines 1605</textarea>
-                      <div class="text-muted fs-7">e.g. "123 Main St, Anytown Philippines"</div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-                  </div>
-                </div>
-                <div class="separator border-secondary my-10"></div>
-                <h2 class="mb-10">Certification Details</h2>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class="required form-label">Partner Badges:</label>
-                      <select name="badge_option" id="badge_option" class="form-select"
-                        data-placeholder="Select partner badge level from dropdown menu">
-                        <option value="Bronze" id="Bronze" selected>Bronze</option>
-                        <option value="Silver" id="Silver">Silver</option>
-                        <option value="Gold" id="Gold">Gold</option>
-                      </select>
-                      <div class="text-muted fs-7">Select partner badge level from dropdown menu e.g. "Bronze",
-                        "Silver", "Gold"</div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root">
-                      <label class="required form-label">Certificate Validity Date:</label>
-                      <input type="date" name="certificate_validity" id="certificate_validity"
-                        class="form-control mb-2" />
-                      <div class="text-muted fs-7">Select certificate validity date from calendar or enter date here
-                        e.g. "01/01/2023", "12/31/2023"</div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class=" form-label">Upload Certificate Template with Signature:</label>
-                      <input type="file" name="certificate_template" id="certificate_template" class="form-control mb-2"
-                        placeholder="Upload certificate template with signature here" disabled />
-                      <div class="text-muted fs-7">Click <a href="" class="link-primary">here</a> on how to obtain the
-                        template
-                      </div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-                  </div>
-                </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class="required form-label">Brands</label>
-                      <div class="text-muted fs-7 mb-5">Select all applicable brands from the list below</div>
+    <div class="d-flex flex-column-fluid align-items-start container-xxl">
+        <div class="content flex-row-fluid py-10">
+            <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST" id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
+                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <div class="card card-flush py-4">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h1>Authorized Reseller Certificates Generator <span class="badge badge-secondary">Beta</span></h1>
+                                </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h2 class="mb-10 mt-10">Business Details</h2>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Business Name</label>
+                                            <input type="text" name="business_name" id="business_name" class="form-control mb-2" placeholder="Enter business name here" value="IPSYSTEMS, Inc." />
+                                            <div class="text-muted fs-7">e.g. "ABC Corporation"</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Business Address</label>
+                                            <textarea type="text" name="business_address" id="business_address" class="form-control mb-2" placeholder="Enter business address here">1004 Antel Global Corporate Center #3 Julia Vargas Ave., Ortigas Center Pasig City, Philippines 1605</textarea>
+                                            <div class="text-muted fs-7">e.g. "123 Main St, Anytown Philippines"</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="separator border-secondary my-10"></div>
+                                <h2 class="mb-10">Certification Details</h2>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Partner Badges:</label>
+                                            <select name="badge_option" id="badge_option" class="form-select" data-placeholder="Select partner badge level from dropdown menu">
+                                                <option value="Bronze" id="Bronze" selected>Bronze</option>
+                                                <option value="Silver" id="Silver">Silver</option>
+                                                <option value="Gold" id="Gold">Gold</option>
+                                            </select>
+                                            <div class="text-muted fs-7">Select partner badge level from dropdown menu e.g. "Bronze", "Silver", "Gold"</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root">
+                                            <label class="required form-label">Certificate Validity Date:</label>
+                                            <input type="date" name="certificate_validity" id="certificate_validity" class="form-control mb-2" />
+                                            <div class="text-muted fs-7">Select certificate validity date from calendar or enter date here e.g. "01/01/2023", "12/31/2023"</div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class=" form-label">Upload Certificate Template with
+                                                Signature:</label>
+                                            <input type="file" name="certificate_template" id="certificate_template" class="form-control mb-2" placeholder="Upload certificate template with signature here" disabled />
+                                            <div class="text-muted fs-7">Click <a href="" class="link-primary">here</a> on how to obtain the template
+                                            </div>
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Brands</label>
+                                            <div class="text-muted fs-7 mb-5">Select all applicable brands from the list below
+                                            </div>
 
+                                        </div>
+                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap">
+
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="bitdefender" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Bitdefender </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="sonicwall" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> SonicWall </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="prtg" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> PRTG Network Monitor
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="faronics" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Faronics </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="secpoint" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> SecPoint </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="easynac" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Easy NAC </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="teamviewer" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> TeamViewer </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="veriato" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Veriato </label>
+                                            </div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="rdx" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> RDX Tandberg Data </label>
+                                            </div>
+
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="activeimage" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> ActiveImage Protector
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="axigen" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Axigen </label>
+                                            </div>
+                                            <div class="form-check mb-5">
+                                                <input class="form-check-input" type="checkbox" value="infosec" id="brands" name="brands" />
+                                                <label class="form-check-label" for="brands"> Infosec </label>
+                                            </div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
+                                            <label class="required form-label">Certificate Issuer Full Name</label>
+                                            <input type="text" name="ci_fullname" id="ci_fullname" class="form-control mb-2" placeholder="Please enter the full name of the certificate issuer, which will appear on the certificate." value="Joseph B. Logro" />
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                        <div class="fv-row w-100 flex-md-root"><label class="required form-label">
+                                                Position</label>
+                                            <input type="text" name="ci_position" id="ci_position" class="form-control mb-2" placeholder="Please enter the position of the certificate issuer, which will appear below the signature on the certificate." value="General Manager" />
+                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 fv-row">
+                                    <div class="d-flex flex-wrap gap-5">
+                                        <div class="fv-row w-100 flex-md-root fv-plugins-icon-container"></div>
+                                        <div class="fv-row w-100 flex-md-root"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="fv-plugins-message-container invalid-feedback"></div>
-                  </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="reset" class="btn btn-light me-5">Clear All</button>
+                        <button class="btn btn-primary" type="submit" id="authorized-reseller-submit">
+                            <span class="indicator-label"> Generate Certificate</span>
+                            <span class="indicator-progress">
+                                Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap">
-
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="bitdefender" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Bitdefender </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="sonicwall" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> SonicWall </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="prtg" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> PRTG Network Monitor </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="faronics" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Faronics </label>
-                      </div>
-                    </div>
-
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="secpoint" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> SecPoint </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="easynac" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Easy NAC </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="teamviewer" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> TeamViewer </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="veriato" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Veriato </label>
-                      </div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="rdx" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> RDX Tandberg Data </label>
-                      </div>
-
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="activeimage" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> ActiveImage Protector </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="axigen" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Axigen </label>
-                      </div>
-                      <div class="form-check mb-5">
-                        <input class="form-check-input" type="checkbox" value="infosec" id="brands" name="brands" />
-                        <label class="form-check-label" for="brands"> Infosec </label>
-                      </div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-
-                  </div>
-                </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                      <label class="required form-label">Certificate Issuer Full Name</label>
-                      <input type="text" name="ci_fullname" id="ci_fullname" class="form-control mb-2"
-                        placeholder="Please enter the full name of the certificate issuer, which will appear on the certificate."
-                        value="Joseph B. Logro" />
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row w-100 flex-md-root"><label class="required form-label">
-                        Position</label>
-                      <input type="text" name="ci_position" id="ci_position" class="form-control mb-2"
-                        placeholder="Please enter the position of the certificate issuer, which will appear below the signature on the certificate."
-                        value="General Manager" />
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-5 fv-row">
-                  <div class="d-flex flex-wrap gap-5">
-                    <div class="fv-row w-100 flex-md-root fv-plugins-icon-container"></div>
-                    <div class="fv-row w-100 flex-md-root"></div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button type="reset" class="btn btn-light me-5">Clear All</button>
-            <button class="btn btn-primary" type="submit" id="authorized-reseller-submit">
-              <span class="indicator-label"> Generate Certificate</span>
-              <span class="indicator-progress">
-                Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-              </span>
-            </button>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script src="assets/plugins/global/plugins.bundle.js"></script>
-  <script src="assets/js/scripts.bundle.js "></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
 
-  <script src="https://unpkg.com/ulid@2.3.0/dist/index.umd.js"></script>
-  <script>
-    "use strict";
+    <script src="https://unpkg.com/ulid@2.3.0/dist/index.umd.js"></script>
+    <script>
+        "use strict";
 
-    function generate_data() {
-      var jsPDF = window.jspdf.jsPDF;
+        function generate_data() {
+            var jsPDF = window.jspdf.jsPDF;
 
-      ///Variables
-      var business_name = document.getElementById("business_name");
-      var business_address = document.getElementById("business_address");
-      var certificate_validity = document.getElementById("certificate_validity");
-      var badge_selected = document.getElementById("badge_option");
-      var badge_value = badge_selected.value;
+            ///Variables
+            var business_name = document.getElementById("business_name");
+            var business_address = document.getElementById("business_address");
+            var certificate_validity = document.getElementById("certificate_validity");
+            var badge_selected = document.getElementById("badge_option");
+            var badge_value = badge_selected.value;
 
-      var ci_fullname = document.getElementById("ci_fullname");
-      var ci_position = document.getElementById("ci_position");
-      var badge_img;
-      if (badge_value == "Bronze") {
-        badge_img = "bronze_badge.png";
-      } else if (badge_value == "Silver") {
-        badge_img = "silver_badge.png";
-      } else if (badge_value == "Gold") {
-        badge_img = "gold_badge.png";
-      } else {
-        // Handle other cases
-      }
-
-      const dateStr = certificate_validity.value;
-      const date = new Date(dateStr);
-      const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      };
-      const formattedDate = date.toLocaleDateString('en-US', options);
-
-
-      var fontFile1 = "Poppins-SemiBold.ttf";
-      var fontBase641 = "data:application/x-font-ttf;base64," + btoa(fontFile1);
-      var fontFile2 = "SourceSansPro-Regular.ttf";
-      var fontBase642 = "data:application/x-font-ttf;base64," + btoa(fontFile2);
-
-      const checkboxes = document.querySelectorAll('input[name="brands"]:checked');
-      const brands = Array.from(checkboxes).map((checkbox) => checkbox.value);
-
-      const logos = {
-        bitdefender: 'bitdefender_logo.png',
-        sonicwall: 'sonicwall_logo.png',
-        prtg: 'prtg_logo.png',
-        faronics: 'faronics_logo.png',
-        secpoint: 'secpoint_logo.png',
-        easynac: 'easynac_logo.png',
-        teamviewer: 'teamviewer_logo.png',
-        veriato: 'veriato_logo.png',
-        rdx: 'rdx_logo.png',
-        activeimage: 'active_image.png',
-        axigen: 'axigen_logo.png',
-        infosec: 'infosec_logo.png'
-      };
-
-      const selectedBrands = brands;
-      var doc = new jsPDF();
-
-      var imgDatasample = "A4-bg.png";
-
-      doc.addFileToVFS("Poppins-SemiBold.ttf", fontBase641);
-      doc.addFont("Poppins-SemiBold.ttf", "poppins", 600);
-      doc.addFileToVFS("SourceSansPro-Regular.ttf", fontBase642);
-      doc.addFont("SourceSansPro-Regular.ttf", "SourceSansPro", "normal");
-
-      doc.setFont("helvetica", "bold");
-      doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 300);
-      // Add the selected brands logos
-      const logoProperties = {
-        maxWidth: 120,
-        lineHeightFactor: 2
-      };
-
-      doc.setProperties(logoProperties);
-      const logoWidth = 28;
-      const logoHeight = 7;
-      let currentX = 29;
-      let currentY = 170;
-      let logoCount = 0;
-
-      selectedBrands.forEach((brand) => {
-        if (logos[brand.toLowerCase()] && logoCount < 8) { // limit to maximum of 8 logos (2 rows)
-          const logo = logos[brand.toLowerCase()];
-          doc.addImage(logo, 'PNG', currentX, currentY, logoWidth, logoHeight);
-          currentX += logoWidth + 5;
-          logoCount++;
-
-          if (logoCount === 4) { // if 4 logos have been displayed, start a new row
-            currentX = 29;
-            currentY += logoHeight + 10;
-          }
-        }
-      });
-
-      doc.setFontSize(28);
-      doc.setTextColor(253, 154, 36);
-      doc.text("" + business_name.value + "", 29, 118);
-      doc.setTextColor(0, 0, 0);
-      doc.addImage(badge_img, 144, 20, 0, 50);
-      // doc.setFont("SourceSansPro", "normal");
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(11);
-      doc.text("with a business address at " + business_address.value, 29, 131, {
-        maxWidth: 120,
-        lineHeightFactor: 1.5,
-      });
-      // doc.setFont("poppins", 600);
-      doc.setFontSize(11.5);
-      doc.text("is an authorized " + badge_value + " Partner of IPSYSTEMS, Inc. for the following product/s:", 29, 155, {
-        maxWidth: 95,
-        lineHeightFactor: 1.5,
-      });
-      //doc.setFont("SourceSansPro", "normal");
-      doc.setFontSize(10);
-      doc.text("We are truly grateful that you chose to do business with us, and we look forward to a fruitful and long-lasting partnership with you. This certification is valid until " + formattedDate + ".", 29, 212, {
-        maxWidth: 148,
-        lineHeightFactor: 1.5,
-      });
-      doc.setFontSize(11.5);
-      doc.text(ci_fullname.value + "\n" + ci_position.value, 29, 260, {
-        lineHeightFactor: 1.3,
-      });
-      doc.setFontSize(8);
-      doc.text(ULID.ulid(), 185, 265, {
-        align: 'right'
-      });
-      doc.save(business_name.value + ".pdf");
-    }
-
-
-    // Class definition
-    var CertificateGenerator = function () {
-      // Private variables
-      var form = document.getElementById('authorized-reseller-form');
-      var submitButton = document.getElementById('authorized-reseller-submit');
-      var validation;
-
-      // Private functions
-      var initValidation = function () {
-        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-        validation = FormValidation.formValidation(
-          form, {
-          fields: {
-            business_name: {
-              validators: {
-                notEmpty: {
-                  message: "Business Name is required"
-                }
-              }
-            },
-            business_address: {
-              validators: {
-                notEmpty: {
-                  message: "Business Address is required"
-                }
-              }
-            },
-            certificate_validity: {
-              validators: {
-                notEmpty: {
-                  message: "Certificate Validity Date is required"
-                }
-              }
-            },
-            badge_option: {
-              validators: {
-                notEmpty: {
-                  message: "Badge is required"
-                }
-              }
-            },
-            brands: {
-              validators: {
-                notEmpty: {
-                  message: "Brands is required"
-                }
-              }
-            },
-            ci_fullname: {
-              validators: {
-                notEmpty: {
-                  message: "Certificate Issuer Full Nameis required"
-                }
-              }
-            },
-            ci_position: {
-              validators: {
-                notEmpty: {
-                  message: "Certificate Issuer Position is required"
-                }
-              }
-            }
-          },
-          plugins: {
-            trigger: new FormValidation.plugins.Trigger(),
-            submitButton: new FormValidation.plugins.SubmitButton(),
-            // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
-            bootstrap: new FormValidation.plugins.Bootstrap5({
-              rowSelector: '.fv-row',
-              eleInvalidClass: '',
-              eleValidClass: ''
-            })
-          }
-        }
-        );
-
-      }
-
-      var handleForm = function () {
-        submitButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          validation.validate().then(function (status) {
-            if (status == 'Valid') {
-              swal.fire({
-                text: "Thank you! Your Certificate will generate",
-                icon: "success",
-                buttonsStyling: false,
-                confirmButtonText: "Ok, got it!",
-                customClass: {
-                  confirmButton: "btn fw-bold btn-light-primary"
-                }
-
-              });
-              generate_data();
+            var ci_fullname = document.getElementById("ci_fullname");
+            var ci_position = document.getElementById("ci_position");
+            var badge_img;
+            if (badge_value == "Bronze") {
+                badge_img = "bronze_badge.png";
+            } else if (badge_value == "Silver") {
+                badge_img = "silver_badge.png";
+            } else if (badge_value == "Gold") {
+                badge_img = "gold_badge.png";
             } else {
-              swal.fire({
-                text: "Sorry, looks like there are some errors detected, please try again.",
-                icon: "error",
-                buttonsStyling: false,
-                confirmButtonText: "Ok, got it!",
-                customClass: {
-                  confirmButton: "btn fw-bold btn-light-primary"
-                }
-              });
+                // Handle other cases
             }
-          });
-        });
-      }
 
-      // Public methods
-      return {
-        init: function () {
-          initValidation();
-          handleForm();
+            const dateStr = certificate_validity.value;
+            const date = new Date(dateStr);
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+
+            const checkboxes = document.querySelectorAll('input[name="brands"]:checked');
+            const brands = Array.from(checkboxes).map((checkbox) => checkbox.value);
+
+            const logos = {
+                bitdefender: 'bitdefender_logo.png',
+                sonicwall: 'sonicwall_logo.png',
+                prtg: 'prtg_logo.png',
+                faronics: 'faronics_logo.png',
+                secpoint: 'secpoint_logo.png',
+                easynac: 'easynac_logo.png',
+                teamviewer: 'teamviewer_logo.png',
+                veriato: 'veriato_logo.png',
+                rdx: 'rdx_logo.png',
+                activeimage: 'active_image.png',
+                axigen: 'axigen_logo.png',
+                infosec: 'infosec_logo.png'
+            };
+
+            const selectedBrands = brands;
+            var doc = new jsPDF();
+
+            var imgDatasample = "A4-bg.png";
+
+
+            doc.addFont("Poppins-SemiBold.ttf", "Poppins", "Semibold");
+            doc.addFont("SourceSansPro-Regular.ttf", "Source Sans Pro", "normal");
+
+
+
+            doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 300);
+            doc.setFont("Poppins", "Semibold");
+            doc.setFontSize(36);
+            doc.setTextColor(253, 154, 36);
+            doc.text("Certified Reseller", 29, 78);
+            doc.setTextColor(0, 0, 0);
+            doc.setFont("Source Sans Pro", "normal");
+            doc.setFontSize(10.5);
+            doc.text("We are pleased to certify that", 29, 100, {
+                maxWidth: 120,
+                lineHeightFactor: 1.5,
+            });
+            // Add the selected brands logos
+            var certificate_statement = 212;
+            const logoProperties = {
+                maxWidth: 145,
+                lineHeightFactor: 2
+            };
+
+            doc.setProperties(logoProperties);
+            let logoWidth = 32;
+            let logoHeight = 8;
+            if (selectedBrands.length < 4) {
+                logoWidth *= 1.5;
+                logoHeight *= 1.5;
+                certificate_statement = 200;
+            } else if (selectedBrands.length = 4) {
+                certificate_statement = 195;
+            }
+            let currentX = 29;
+            let currentY = 170;
+            let logoCount = 0;
+
+            selectedBrands.forEach((brand) => {
+                if (logos[brand.toLowerCase()] && logoCount < 8) { // limit to maximum of 8 logos (2 rows)
+                    const logo = logos[brand.toLowerCase()];
+                    doc.addImage(logo, 'PNG', currentX, currentY, logoWidth, logoHeight);
+                    currentX += logoWidth + 5;
+                    logoCount++;
+
+                    if (logoCount === 4) { // if 4 logos have been displayed, start a new row
+                        currentX = 29;
+                        currentY += logoHeight + 10;
+                    }
+                }
+            });
+            doc.setFont("Poppins", "Semibold");
+            doc.setFontSize(28);
+            doc.setTextColor(253, 154, 36);
+            doc.text(business_name.value, 29, 118, {
+                lineHeightFactor: 1.5,
+            });
+
+            doc.setLineWidth(0.5); // set line width to 0.5 units
+            doc.setDrawColor(253, 154, 36); // set line color
+            doc.line(29, 122, 29 + 5 + doc.getTextWidth(business_name.value), 122); // draw line below text at y position 130
+
+            doc.setTextColor(0, 0, 0);
+            doc.addImage(badge_img, 144, 20, 0, 50);
+            // doc.setFont("SourceSansPro", "normal");
+            doc.setFont("Source Sans Pro", "normal");
+            doc.setFontSize(10.5);
+            doc.text("with a business address at " + business_address.value, 29, 131, {
+                maxWidth: 120,
+                lineHeightFactor: 1.5,
+            });
+            // doc.setFont("poppins", 600);
+            doc.setFontSize(10.5);
+            doc.text("is an authorized " + badge_value + " Partner of IPSYSTEMS, Inc. \nfor the following product/s:", 29, 155, {
+                maxWidth: 95,
+                lineHeightFactor: 1.5,
+            });
+            //doc.setFont("SourceSansPro", "normal");
+            doc.setFontSize(10.5);
+            //212
+            doc.text("We are truly grateful that you chose to do business with us, and we look forward to a fruitful \nand long-lasting partnership with you. ", 29, certificate_statement, {
+                maxWidth: 145,
+                lineHeightFactor: 1.5,
+            });
+            doc.setFont("Poppins", "Semibold");
+            doc.setFontSize(10);
+            doc.text("\nThis certification is valid until " + formattedDate + ".", 18.5 + doc.getTextWidth("and long-lasting partnership with you. "), certificate_statement + .3, {
+                maxWidth: 145,
+                lineHeightFactor: 1.5,
+            });
+
+            doc.setFont("Poppins", "Semibold");
+            doc.setFontSize(10.5);
+            doc.text(ci_fullname.value, 29, 260, {
+                lineHeightFactor: 1.3,
+            });
+            doc.setFont("Source Sans Pro", "normal");
+            doc.text("\n" + ci_position.value, 29, 260, {
+                lineHeightFactor: 1.3,
+            });
+            doc.setFontSize(6);
+            doc.text(ULID.ulid(), 185, 265, {
+                align: 'right'
+            });
+            doc.save(business_name.value + ".pdf");
         }
-      }
-    }();
 
-    // On document ready
-    KTUtil.onDOMContentLoaded(function () {
-      CertificateGenerator.init();
-    });
-  </script>
+
+        // Class definition
+        var CertificateGenerator = function() {
+            // Private variables
+            var form = document.getElementById('authorized-reseller-form');
+            var submitButton = document.getElementById('authorized-reseller-submit');
+            var validation;
+
+            // Private functions
+            var initValidation = function() {
+                // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+                validation = FormValidation.formValidation(
+                    form, {
+                        fields: {
+                            business_name: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Business Name is required"
+                                    }
+                                }
+                            },
+                            business_address: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Business Address is required"
+                                    }
+                                }
+                            },
+                            certificate_validity: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Certificate Validity Date is required"
+                                    }
+                                }
+                            },
+                            badge_option: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Badge is required"
+                                    }
+                                }
+                            },
+                            brands: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Brands is required"
+                                    }
+                                }
+                            },
+                            ci_fullname: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Certificate Issuer Full Nameis required"
+                                    }
+                                }
+                            },
+                            ci_position: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Certificate Issuer Position is required"
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            trigger: new FormValidation.plugins.Trigger(),
+                            submitButton: new FormValidation.plugins.SubmitButton(),
+                            // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
+                            bootstrap: new FormValidation.plugins.Bootstrap5({
+                                rowSelector: '.fv-row',
+                                eleInvalidClass: '',
+                                eleValidClass: ''
+                            })
+                        }
+                    }
+                );
+
+            }
+
+            var handleForm = function() {
+                submitButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    validation.validate().then(function(status) {
+                        if (status == 'Valid') {
+                            swal.fire({
+                                text: "Thank you! Your Certificate will generate",
+                                icon: "success",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn fw-bold btn-light-primary"
+                                }
+
+                            });
+                            generate_data();
+                        } else {
+                            swal.fire({
+                                text: "Sorry, looks like there are some errors detected, please try again.",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn fw-bold btn-light-primary"
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+
+            // Public methods
+            return {
+                init: function() {
+                    initValidation();
+                    handleForm();
+                }
+            }
+        }();
+
+        // On document ready
+        KTUtil.onDOMContentLoaded(function() {
+            CertificateGenerator.init();
+        });
+    </script>
 
 </body>
 
