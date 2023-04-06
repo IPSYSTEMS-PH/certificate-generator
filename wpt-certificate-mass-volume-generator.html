@@ -35,8 +35,8 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <div class="card card-p-0 card-flush">
-                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                            <div class="card ">
+                                                <div class="card-header align-items-center ">
                                                     <div class="card-title">
                                                         <!--begin::Search-->
                                                         <div class="d-flex align-items-center position-relative my-1">
@@ -111,32 +111,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
-                                                    <table
-                                                        class="table align-middle border rounded table-row-dashed fs-6 g-5"
-                                                        id="kt_datatable_example">
-                                                        <thead>
-                                                            <!--begin::Table row-->
-                                                            <tr
-                                                                class="text-start text-gray-400 fw-bold fs-7 text-uppercase">
-                                                                <th class="min-w-100px">Attendee Name</th>
-                                                                <th class="min-w-100px">Organization Name</th>
-                                                            </tr>
-                                                            <!--end::Table row-->
-                                                        </thead>
-                                                        <tbody class="fw-semibold text-gray-600">
-                                                            <tr class="odd">
-                                                                <td>
-                                                                    <span class="text-dark text-hover-primary">Attendee
-                                                                        Name</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span
-                                                                        class="text-dark text-hover-primary">Organization
-                                                                        Name Sample</span>
-                                                                </td>
+                                                    <table class="table align-middle  fs-6 g-5"
+                                                        id="kt_datatable_example" name="kt_datatable_example">
 
-                                                            </tr>
-                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </div>
@@ -351,7 +328,8 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="reset" class="btn btn-light me-5">Clear All</button>
-                        <button class="btn btn-primary" id="certificate-submit" name="certificate-submit">
+                        <button class="btn btn-primary" id="certificate-submit" name="certificate-submit"
+                            onclick="multiple_pdf()">
                             <span class="indicator-label"> Generate Certificate</span>
                             <span class="indicator-progress">
                                 Please wait...
@@ -370,7 +348,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
     <script src="https://unpkg.com/ulid@2.3.0/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 
+    <script>
+        function multiple_pdf() {
+            // Initialize jsPDF
+
+            var jsPDF = window.jspdf.jsPDF;
+            // Initialize jsPDF
+            const doc = new jsPDF('landscape');
+
+
+
+            function generatePDF(data) {
+                // Initialize jsPDF
+                const doc = new jsPDF();
+
+                // Set font size and style
+                doc.setFontSize(20);
+                doc.setFont('helvetica', 'bold');
+
+                // Add name to PDF
+                doc.text(`Name: ${data.name}`, 20, 20);
+
+                // Save PDF file with unique name
+                doc.save(`file_${data.id}.pdf`);
+            }
+
+            // Loop over each row of data and generate a PDF for each row
+            const data = [{
+                id: 1,
+                name: 'John Doe',
+                email: 'john@example.com'
+            }, {
+                id: 2,
+                name: 'Jane Smith',
+                email: 'jane@example.com'
+            }, {
+                id: 3,
+                name: 'Bob Johnson',
+                email: 'bob@example.com'
+            },];
+
+            data.forEach((row) => {
+                generatePDF(row);
+            });
+        }
+    </script>
     <script>
         "use strict";
 
@@ -723,9 +747,9 @@
 
         // On document ready
         KTUtil.onDOMContentLoaded(function () {
-            KTDatatablesExample.init();
-
-            CertificateGenerator.init();
+            //  KTDatatablesExample.init();
+            //  multiple_pdf();
+            // CertificateGenerator.init();
         });
     </script>
 </body>
