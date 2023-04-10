@@ -12,20 +12,24 @@
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet" />
 
 </head>
 
 <body>
     <div class="d-flex flex-column-fluid align-items-start container-xxl">
         <div class="content flex-row-fluid py-10">
-            <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST" id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
+            <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
+                id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
                 <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
                     <div class="d-flex flex-column gap-7 gap-lg-10">
                         <div class="card card-flush py-4">
                             <div class="card-header">
                                 <div class="card-title">
-                                    <h1>Authorized Reseller Certificates Generator <span class="badge badge-secondary">Beta</span></h1>
+                                    <h1>Authorized Reseller Certificates Generator <span
+                                            class="badge badge-secondary">Beta</span></h1>
                                 </div>
                             </div>
                             <div class="card-body pt-0">
@@ -34,7 +38,9 @@
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Business Name</label>
-                                            <input type="text" name="business_name" id="business_name" class="form-control mb-2" placeholder="Enter business name here" value="IPSYSTEMS, Inc." />
+                                            <input type="text" name="business_name" id="business_name"
+                                                class="form-control mb-2" placeholder="Enter business name here"
+                                                value="IPSYSTEMS, Inc." />
                                             <div class="text-muted fs-7">e.g. "ABC Corporation"</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
@@ -45,7 +51,9 @@
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Business Address</label>
-                                            <textarea type="text" name="business_address" id="business_address" class="form-control mb-2" placeholder="Enter business address here">1004 Antel Global Corporate Center #3 Julia Vargas Ave., Ortigas Center Pasig City, Philippines 1605</textarea>
+                                            <textarea type="text" name="business_address" id="business_address"
+                                                class="form-control mb-2"
+                                                placeholder="Enter business address here">1004 Antel Global Corporate Center #3 Julia Vargas Ave., Ortigas Center Pasig City, Philippines 1605</textarea>
                                             <div class="text-muted fs-7">e.g. "123 Main St, Anytown Philippines"</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
@@ -58,18 +66,22 @@
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Partner Badges:</label>
-                                            <select name="badge_option" id="badge_option" class="form-select" data-placeholder="Select partner badge level from dropdown menu">
+                                            <select name="badge_option" id="badge_option" class="form-select"
+                                                data-placeholder="Select partner badge level from dropdown menu">
                                                 <option value="Bronze" id="Bronze" selected>Bronze</option>
                                                 <option value="Silver" id="Silver">Silver</option>
                                                 <option value="Gold" id="Gold">Gold</option>
                                             </select>
-                                            <div class="text-muted fs-7">Select partner badge level from dropdown menu e.g. "Bronze", "Silver", "Gold"</div>
+                                            <div class="text-muted fs-7">Select partner badge level from dropdown menu
+                                                e.g. "Bronze", "Silver", "Gold"</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root">
                                             <label class="required form-label">Certificate Validity Date:</label>
-                                            <input type="date" name="certificate_validity" id="certificate_validity" class="form-control mb-2" />
-                                            <div class="text-muted fs-7">Select certificate validity date from calendar or enter date here e.g. "01/01/2023", "12/31/2023"</div>
+                                            <input type="date" name="certificate_validity" id="certificate_validity"
+                                                class="form-control mb-2" />
+                                            <div class="text-muted fs-7">Select certificate validity date from calendar
+                                                or enter date here e.g. "01/01/2023", "12/31/2023"</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                     </div>
@@ -79,8 +91,12 @@
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class=" form-label">Upload Certificate Template with
                                                 Signature:</label>
-                                            <input type="file" name="certificate_template" id="certificate_template" class="form-control mb-2" placeholder="Upload certificate template with signature here" disabled />
-                                            <div class="text-muted fs-7">Click <a href="" class="link-primary">here</a> on how to obtain the template
+                                            <input type="file" name="certificate_template" id="certificate_template"
+                                                class="form-control mb-2"
+                                                placeholder="Upload certificate template with signature here"
+                                                disabled />
+                                            <div class="text-muted fs-7">Click <a href="" class="link-primary">here</a>
+                                                on how to obtain the template
                                             </div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
@@ -91,7 +107,8 @@
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Brands</label>
-                                            <div class="text-muted fs-7 mb-5">Select all applicable brands from the list below
+                                            <div class="text-muted fs-7 mb-5">Select all applicable brands from the list
+                                                below
                                             </div>
 
                                         </div>
@@ -104,59 +121,71 @@
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
 
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="bitdefender" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="bitdefender"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Bitdefender </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="sonicwall" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="sonicwall"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> SonicWall </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="prtg" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="prtg" id="brands"
+                                                    name="brands" />
                                                 <label class="form-check-label" for="brands"> PRTG Network Monitor
                                                 </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="faronics" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="faronics"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Faronics </label>
                                             </div>
                                         </div>
 
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="secpoint" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="secpoint"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> SecPoint </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="easynac" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="easynac"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Easy NAC </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="teamviewer" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="teamviewer"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> TeamViewer </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="veriato" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="veriato"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Veriato </label>
                                             </div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="rdx" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="rdx" id="brands"
+                                                    name="brands" />
                                                 <label class="form-check-label" for="brands"> RDX Tandberg Data </label>
                                             </div>
 
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="activeimage" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="activeimage"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> ActiveImage Protector
                                                 </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="axigen" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="axigen"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Axigen </label>
                                             </div>
                                             <div class="form-check mb-5">
-                                                <input class="form-check-input" type="checkbox" value="infosec" id="brands" name="brands" />
+                                                <input class="form-check-input" type="checkbox" value="infosec"
+                                                    id="brands" name="brands" />
                                                 <label class="form-check-label" for="brands"> Infosec </label>
                                             </div>
                                         </div>
@@ -169,12 +198,18 @@
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Certificate Issuer Full Name</label>
-                                            <input type="text" name="ci_fullname" id="ci_fullname" class="form-control mb-2" placeholder="Please enter the full name of the certificate issuer, which will appear on the certificate." value="Joseph B. Logro" />
+                                            <input type="text" name="ci_fullname" id="ci_fullname"
+                                                class="form-control mb-2"
+                                                placeholder="Please enter the full name of the certificate issuer, which will appear on the certificate."
+                                                value="Joseph B. Logro" />
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"><label class="required form-label">
                                                 Position</label>
-                                            <input type="text" name="ci_position" id="ci_position" class="form-control mb-2" placeholder="Please enter the position of the certificate issuer, which will appear below the signature on the certificate." value="General Manager" />
+                                            <input type="text" name="ci_position" id="ci_position"
+                                                class="form-control mb-2"
+                                                placeholder="Please enter the position of the certificate issuer, which will appear below the signature on the certificate."
+                                                value="General Manager" />
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                     </div>
@@ -292,8 +327,8 @@
             };
 
             doc.setProperties(logoProperties);
-            let logoWidth = 32;
-            let logoHeight = 8;
+            let logoWidth = 34;
+            let logoHeight = 8.5;
             if (selectedBrands.length < 4) {
                 logoWidth *= 1.5;
                 logoHeight *= 1.5;
@@ -309,7 +344,7 @@
                 if (logos[brand.toLowerCase()] && logoCount < 8) { // limit to maximum of 8 logos (2 rows)
                     const logo = logos[brand.toLowerCase()];
                     doc.addImage(logo, 'PNG', currentX, currentY, logoWidth, logoHeight);
-                    currentX += logoWidth + 5;
+                    currentX += logoWidth + 2;
                     logoCount++;
 
                     if (logoCount === 4) { // if 4 logos have been displayed, start a new row
@@ -376,87 +411,87 @@
 
 
         // Class definition
-        var CertificateGenerator = function() {
+        var CertificateGenerator = function () {
             // Private variables
             var form = document.getElementById('authorized-reseller-form');
             var submitButton = document.getElementById('authorized-reseller-submit');
             var validation;
 
             // Private functions
-            var initValidation = function() {
+            var initValidation = function () {
                 // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
                 validation = FormValidation.formValidation(
                     form, {
-                        fields: {
-                            business_name: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Business Name is required"
-                                    }
-                                }
-                            },
-                            business_address: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Business Address is required"
-                                    }
-                                }
-                            },
-                            certificate_validity: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Certificate Validity Date is required"
-                                    }
-                                }
-                            },
-                            badge_option: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Badge is required"
-                                    }
-                                }
-                            },
-                            brands: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Brands is required"
-                                    }
-                                }
-                            },
-                            ci_fullname: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Certificate Issuer Full Nameis required"
-                                    }
-                                }
-                            },
-                            ci_position: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Certificate Issuer Position is required"
-                                    }
+                    fields: {
+                        business_name: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Business Name is required"
                                 }
                             }
                         },
-                        plugins: {
-                            trigger: new FormValidation.plugins.Trigger(),
-                            submitButton: new FormValidation.plugins.SubmitButton(),
-                            // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
-                            bootstrap: new FormValidation.plugins.Bootstrap5({
-                                rowSelector: '.fv-row',
-                                eleInvalidClass: '',
-                                eleValidClass: ''
-                            })
+                        business_address: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Business Address is required"
+                                }
+                            }
+                        },
+                        certificate_validity: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Certificate Validity Date is required"
+                                }
+                            }
+                        },
+                        badge_option: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Badge is required"
+                                }
+                            }
+                        },
+                        brands: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Brands is required"
+                                }
+                            }
+                        },
+                        ci_fullname: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Certificate Issuer Full Nameis required"
+                                }
+                            }
+                        },
+                        ci_position: {
+                            validators: {
+                                notEmpty: {
+                                    message: "Certificate Issuer Position is required"
+                                }
+                            }
                         }
+                    },
+                    plugins: {
+                        trigger: new FormValidation.plugins.Trigger(),
+                        submitButton: new FormValidation.plugins.SubmitButton(),
+                        // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
+                        bootstrap: new FormValidation.plugins.Bootstrap5({
+                            rowSelector: '.fv-row',
+                            eleInvalidClass: '',
+                            eleValidClass: ''
+                        })
                     }
+                }
                 );
 
             }
 
-            var handleForm = function() {
-                submitButton.addEventListener('click', function(e) {
+            var handleForm = function () {
+                submitButton.addEventListener('click', function (e) {
                     e.preventDefault();
-                    validation.validate().then(function(status) {
+                    validation.validate().then(function (status) {
                         if (status == 'Valid') {
                             swal.fire({
                                 text: "Thank you! Your Certificate will generate",
@@ -486,7 +521,7 @@
 
             // Public methods
             return {
-                init: function() {
+                init: function () {
                     initValidation();
                     handleForm();
                 }
@@ -494,7 +529,7 @@
         }();
 
         // On document ready
-        KTUtil.onDOMContentLoaded(function() {
+        KTUtil.onDOMContentLoaded(function () {
             CertificateGenerator.init();
         });
     </script>
