@@ -348,7 +348,7 @@
                 if (logos[brand.toLowerCase()] && logoCount < 8) { // limit to maximum of 8 logos (2 rows)
                     const logo = logos[brand.toLowerCase()];
                     doc.addImage(logo, 'PNG', currentX, currentY, logoWidth, logoHeight);
-                    currentX += logoWidth + 2;
+                    currentX += logoWidth + 2.5;
                     logoCount++;
 
                     if (logoCount === 4) { // if 4 logos have been displayed, start a new row
