@@ -429,7 +429,8 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="reset" class="btn btn-light me-5">Clear All</button>
-                        <button class="btn btn-primary  me-5" id="certificate-submit" name="certificate-submit">
+                        <button class="btn btn-primary  me-5" id="certificate-submit" name="certificate-submit"
+                            disabled>
                             <!--  onclick="multiple_pdf()"  -->
                             <span class="indicator-label"> Generate Certificate</span>
                             <span class="indicator-progress">
@@ -437,8 +438,8 @@
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                             </span>
                         </button>
-                        <button class="btn btn-primary  me-5" id="generate-pdf" name="generate-pdf">
-                            <span class="indicator-label">Generate</span>
+                        <button class="btn btn-primary  me-5" id="generate-pdf" name="generate-pdf" disabled>
+                            <span class="indicator-label">Generate Single Pdf</span>
                             <span class="indicator-progress">
                                 Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
@@ -847,26 +848,186 @@
 
                 let idCounter = 1;
 
+
                 function generatePDF() {
-                    // Set font size and style
-                    doc.setFontSize(20);
-                    doc.setFont('helvetica', 'bold');
+                    var jsPDF = window.jspdf.jsPDF;
+
+                    // Initialize jsPDF
 
                     // Loop over each row of data
                     const data = table.data().toArray();
+                    var program_name = document.getElementById("program_name").value;
                     data.forEach((row) => {
                         // Add name to PDF
-                        doc.text(`Name: ${row[1]}`, 20, 20);
+                        var jsPDF = window.jspdf.jsPDF;
 
-                        // Add organization name to PDF
-                        doc.text(`Organization Name: ${row[2]}`, 20, 30);
+                        // Initialize jsPDF
+                        var doc = new jsPDF();
+                        var certificate_title_option = document.getElementById("certificate_title_option");
+                        var certificate_title;
+                        var opening_phrase = document.getElementById("opening_phrase");
+                        var certificate_statement = document.getElementById("certificate_statement").value;
+
+                        if (certificate_title_option.value == "c1") {
+                            certificate_title = "Certificate of Attendance";
+                        } else if (certificate_title_option.value == "c2") {
+                            certificate_title = "Certificate of Completion";
+                        } else if (certificate_title_option.value == "c3") {
+                            certificate_title = "Certificate of Participation";
+                        } else if (certificate_title_option.value == "c4") {
+                            certificate_title = "Certificate of Appreciation";
+                        } else {
+
+                        }
+
+                        var brand_options = document.getElementById("brand_options");
+                        var brand_selected = brand_options.value;
+                        var brand_img;
+
+                        if (brand_selected == "bitdefender") {
+                            brand_img = 'bitdefender_logo.png';
+                        } else if (brand_selected == "sonicwall") {
+                            brand_img = 'sonicwall_logo.png';
+                        } else if (brand_selected == "prtg") {
+                            brand_img = 'prtg_logo.png';
+                        } else if (brand_selected == "faronics") {
+                            brand_img = 'faronics_logo.png';
+                        } else if (brand_selected == "secpoint") {
+                            brand_img = 'secpoint_logo.png';
+                        } else if (brand_selected == "easynac") {
+                            brand_img = 'easynac_logo.png';
+                        } else if (brand_selected == "teamviewer") {
+                            brand_img = 'teamviewer_logo.png';
+                        } else if (brand_selected == "veriato") {
+                            brand_img = 'veriato_logo.png';
+                        } else if (brand_selected == "rdx") {
+                            brand_img = 'rdx_logo.png';
+                        } else if (brand_selected == "activeimage") {
+                            brand_img = 'active_image.png';
+                        } else if (brand_selected == "axigen") {
+                            brand_img = 'axigen_logo.png';
+                        } else if (brand_selected == "infosec") {
+                            brand_img = 'infosec_logo.png';
+                        } else {
+
+                        }
+
+                        const date_issue = document.getElementById("date_issue").value;
+                        const date = new Date(date_issue);
+                        const year = date.getFullYear();
+                        const month = date.toLocaleString('default', {
+                            month: 'long'
+                        });
+                        const day = date.getDate();
+
+
+
+                        var ci_fullname = document.getElementById("ci_fullname");
+                        var ci_position = document.getElementById("ci_position");
+                        var pi_fullname = document.getElementById("pi_fullname");
+                        var pi_position = document.getElementById("pi_position");
+
+                        var doc = new jsPDF('landscape');
+                        const x = doc.internal.pageSize.getWidth() / 2;
+                        const y = doc.internal.pageSize.getHeight() / 2;
+                        var imgDatasample = "A4-landscape.png";
+
+                        doc.addFont("Poppins-SemiBold.ttf", "Poppins", "Semibold");
+                        doc.addFont("SourceSansPro-Regular.ttf", "Source Sans Pro", "normal");
+
+                        doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 210);
+
+                        doc.addImage(brand_img, 'PNG', 224.74, 33, 40, 10);
+
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(36);
+                        doc.setTextColor(253, 154, 36);
+                        const text = certificate_title;
+                        const textWidth = doc.getTextWidth(text);
+                        const textHeight = doc.getTextDimensions(text).h;
+                        doc.text(certificate_title, x, 66, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        doc.setFont("Source Sans Pro", "normal");
+                        const text1 = opening_phrase.value;
+                        doc.text(text1, x, 80, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(30);
+                        doc.setTextColor(253, 154, 36);
+                        const text2 = row[1];
+                        doc.text(text2, x, 98, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setDrawColor(253, 154, 36);
+                        doc.setLineWidth(0.5);
+                        doc.line(x - 5 - doc.getTextWidth(text2) / 2, 102, x + 5 + doc.getTextWidth(text2) / 2, 102);
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        const text3 = row[2];
+                        doc.text(text3, x, 110, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        doc.text(certificate_statement, x, 126, {
+                            align: 'center',
+                            maxWidth: 120,
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        const suffix = getDaySuffix(day);
+                        const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
+                        doc.text(text5, x, 150, {
+                            align: 'center',
+                            maxWidth: 120,
+                            lineHeightFactor: 1.5,
+                        }); //138
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.text(ci_fullname.value, 36, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.text("\n" + ci_position.value, 36, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.text(pi_fullname.value, 216, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.text("\n" + pi_position.value, 216, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+
+                        // doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 300);
+                        // Add the selected brands logos
+
+                        //  doc.save(ULID.ulid() + " - " + attendee_name.value + ".pdf");
 
                         // Add page break
                         doc.addPage();
                     });
 
                     // Save PDF file with unique name
-                    doc.save(`file.pdf`);
+                    doc.save(program_name + `.pdf`);
                 }
 
                 function multiple_pdf() {
@@ -877,16 +1038,179 @@
 
                     function generatePDFsingle(data) {
                         // Initialize jsPDF
-                        const doc = new jsPDF();
+                        //  const doc = new jsPDF();
 
                         // Set font size and style
-                        doc.setFontSize(20);
-                        doc.setFont('helvetica', 'bold');
+                        //  doc.setFontSize(20);
+                        //   doc.setFont('helvetica', 'bold');
 
                         // Add name to PDF
-                        doc.text(`Name: ${data[1]}`, 20, 20);
+                        //  doc.text(`Name: ${data[1]}`, 20, 20);
                         // Save PDF file with unique name
-                        doc.save(`file_${data[0]}.pdf`);
+                        //   doc.save(`file_${data[0]}.pdf`);
+                        var jsPDF = window.jspdf.jsPDF;
+
+                        ///Variables
+                        //var attendee_name = document.getElementById("attendee_name");
+                        //var organization = document.getElementById("organization");
+                        var certificate_title_option = document.getElementById("certificate_title_option");
+                        var certificate_title;
+                        var opening_phrase = document.getElementById("opening_phrase");
+                        var certificate_statement = document.getElementById("certificate_statement").value;
+
+                        if (certificate_title_option.value == "c1") {
+                            certificate_title = "Certificate of Attendance";
+                        } else if (certificate_title_option.value == "c2") {
+                            certificate_title = "Certificate of Completion";
+                        } else if (certificate_title_option.value == "c3") {
+                            certificate_title = "Certificate of Participation";
+                        } else if (certificate_title_option.value == "c4") {
+                            certificate_title = "Certificate of Appreciation";
+                        } else {
+
+                        }
+
+                        var brand_options = document.getElementById("brand_options");
+                        var brand_selected = brand_options.value;
+                        var brand_img;
+
+                        if (brand_selected == "bitdefender") {
+                            brand_img = 'bitdefender_logo.png';
+                        } else if (brand_selected == "sonicwall") {
+                            brand_img = 'sonicwall_logo.png';
+                        } else if (brand_selected == "prtg") {
+                            brand_img = 'prtg_logo.png';
+                        } else if (brand_selected == "faronics") {
+                            brand_img = 'faronics_logo.png';
+                        } else if (brand_selected == "secpoint") {
+                            brand_img = 'secpoint_logo.png';
+                        } else if (brand_selected == "easynac") {
+                            brand_img = 'easynac_logo.png';
+                        } else if (brand_selected == "teamviewer") {
+                            brand_img = 'teamviewer_logo.png';
+                        } else if (brand_selected == "veriato") {
+                            brand_img = 'veriato_logo.png';
+                        } else if (brand_selected == "rdx") {
+                            brand_img = 'rdx_logo.png';
+                        } else if (brand_selected == "activeimage") {
+                            brand_img = 'active_image.png';
+                        } else if (brand_selected == "axigen") {
+                            brand_img = 'axigen_logo.png';
+                        } else if (brand_selected == "infosec") {
+                            brand_img = 'infosec_logo.png';
+                        } else {
+
+                        }
+
+                        const date_issue = document.getElementById("date_issue").value;
+                        const date = new Date(date_issue);
+                        const year = date.getFullYear();
+                        const month = date.toLocaleString('default', {
+                            month: 'long'
+                        });
+                        const day = date.getDate();
+
+
+
+                        var ci_fullname = document.getElementById("ci_fullname");
+                        var ci_position = document.getElementById("ci_position");
+                        var pi_fullname = document.getElementById("pi_fullname");
+                        var pi_position = document.getElementById("pi_position");
+
+                        var doc = new jsPDF('landscape');
+                        const x = doc.internal.pageSize.getWidth() / 2;
+                        const y = doc.internal.pageSize.getHeight() / 2;
+                        var imgDatasample = "A4-landscape.png";
+
+                        doc.addFont("Poppins-SemiBold.ttf", "Poppins", "Semibold");
+                        doc.addFont("SourceSansPro-Regular.ttf", "Source Sans Pro", "normal");
+
+                        doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 210);
+
+                        doc.addImage(brand_img, 'PNG', 224.74, 33, 40, 10);
+
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(36);
+                        doc.setTextColor(253, 154, 36);
+                        const text = certificate_title;
+                        const textWidth = doc.getTextWidth(text);
+                        const textHeight = doc.getTextDimensions(text).h;
+                        doc.text(certificate_title, x, 66, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        doc.setFont("Source Sans Pro", "normal");
+                        const text1 = opening_phrase.value;
+                        doc.text(text1, x, 80, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(30);
+                        doc.setTextColor(253, 154, 36);
+                        const text2 = data[1];
+                        doc.text(text2, x, 98, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setDrawColor(253, 154, 36);
+                        doc.setLineWidth(0.5);
+                        doc.line(x - 5 - doc.getTextWidth(text2) / 2, 102, x + 5 + doc.getTextWidth(text2) / 2, 102);
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        const text3 = data[2];
+                        doc.text(text3, x, 110, {
+                            align: 'center',
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        doc.text(certificate_statement, x, 126, {
+                            align: 'center',
+                            maxWidth: 120,
+                            lineHeightFactor: 1.5,
+                        });
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.setTextColor(0, 0, 0);
+                        const suffix = getDaySuffix(day);
+                        const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
+                        doc.text(text5, x, 150, {
+                            align: 'center',
+                            maxWidth: 120,
+                            lineHeightFactor: 1.5,
+                        }); //138
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.text(ci_fullname.value, 36, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.text("\n" + ci_position.value, 36, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+
+                        doc.setFont("Poppins", "Semibold");
+                        doc.setFontSize(10.5);
+                        doc.text(pi_fullname.value, 216, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+                        doc.setFont("Source Sans Pro", "normal");
+                        doc.text("\n" + pi_position.value, 216, 177, {
+                            lineHeightFactor: 1.3,
+                        });
+
+                        // doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 300);
+                        // Add the selected brands logos
+
+                        doc.save(ULID.ulid() + " - " + data[1] + ".pdf");
                     }
 
                     // Loop over each row of data and generate a PDF for each row
