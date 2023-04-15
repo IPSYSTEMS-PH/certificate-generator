@@ -826,7 +826,7 @@
             var table;
 
             var test = function () {
-                //var jsPDF = window.jspdf.jsPDF;
+                var jsPDF = window.jspdf.jsPDF;
 
                 // Initialize jsPDF
                 const doc = new jsPDF();
@@ -849,8 +849,8 @@
                 let idCounter = 1;
 
 
-                function generatePDF() {
-                    //var jsPDF = window.jspdf.jsPDF;
+                function single_PDF() {
+                    var jsPDF = window.jspdf.jsPDF;
 
                     // Initialize jsPDF
 
@@ -859,7 +859,7 @@
                     var program_name = document.getElementById("program_name").value;
                     data.forEach((row) => {
                         // Add name to PDF
-                        var jsPDF = window.jspdf.jsPDF;
+                        //      var jsPDF = window.jspdf.jsPDF;
 
                         // Initialize jsPDF
                         var doc = new jsPDF();
@@ -1224,7 +1224,7 @@
                 // Event listener for generate PDF button
                 document.getElementById('generate-pdf').addEventListener('click', (e) => {
                     e.preventDefault();
-                    generatePDF();
+                    single_PDF();
                 });
 
                 // Event listener for generate PDF button
