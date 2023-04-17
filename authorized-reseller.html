@@ -413,7 +413,7 @@
             doc.text(ULID.ulid(), 185, 265, {
                 align: 'right'
             });
-            doc.save(business_name.value + ".pdf");
+            doc.save(ULID.ulid() - "- " + business_name.value + " Authorized Reseller Certificate.pdf");
         }
 
 
