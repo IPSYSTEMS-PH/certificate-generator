@@ -410,10 +410,11 @@
                 lineHeightFactor: 1.3,
             });
             doc.setFontSize(6);
-            doc.text(ULID.ulid(), 185, 265, {
+            var uniq_id = ULID.ulid();
+            doc.text(uniq_id, 185, 265, {
                 align: 'right'
             });
-            doc.save(ULID.ulid() - "- " + business_name.value + " Authorized Reseller Certificate.pdf");
+            doc.save(uniq_id + " - " + business_name.value + " Authorized Reseller Certificate.pdf");
         }
 
 
