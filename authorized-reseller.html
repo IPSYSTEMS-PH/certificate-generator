@@ -297,7 +297,9 @@
             };
 
             const selectedBrands = brands;
-            var doc = new jsPDF();
+            var doc = new jsPDF({
+                compress: true
+            });
 
             var imgDatasample = "A4-bg.png";
 
