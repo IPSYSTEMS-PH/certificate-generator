@@ -373,7 +373,7 @@
             var maxNameWidth = 145;
             var nameWidth = doc.getTextWidth(business_name.value);
 
-            if (nameWidth > maxNameWidth) {
+            if (nameWidth > 160) {
                 var fontSize = 22;
                 // var scaleFactor = maxNameWidth / nameWidth;
                 // fontSize = Math.floor(fontSize * scaleFactor * 0.9167); // Decrease font size by 5%
@@ -387,7 +387,25 @@
                 doc.setDrawColor(253, 154, 36); // set line color
                 doc.line(29, 125, 29 + 125, 125); // draw line below text at y position 130
 
-            } else {
+
+
+            } else if (nameWidth >= 100) {
+                var fontSize = 22;
+                // var scaleFactor = maxNameWidth / nameWidth;
+                // fontSize = Math.floor(fontSize * scaleFactor * 0.9167); // Decrease font size by 5%
+                doc.setFontSize(fontSize);
+                doc.text(business_name.value, 29, 118, {
+                    maxWidth: 150,
+                    lineHeightFactor: 1.3,
+                });
+
+                doc.setLineWidth(0.5); // set line width to 0.5 units
+                doc.setDrawColor(253, 154, 36); // set line color
+                doc.line(29, 122, 29 + 5 + doc.getTextWidth(business_name.value), 122); // draw line below text at y position 130
+
+
+            }
+            else {
                 doc.text(business_name.value, 29, 118, {
                     maxWidth: 145,
                     lineHeightFactor: 1.3,
