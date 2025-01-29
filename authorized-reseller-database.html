@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authorized Reseller Certificates Generator Beta</title>
+    <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> -->
+
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="d-flex flex-column-fluid align-items-start container-xxl">
+        <div class="content flex-row-fluid py-10">
+            <div class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
+                id="authorized-reseller-form" name="authorized-reseller-form" autocomplete="on">
+                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                        <div class="card card-flush py-4">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h1>Authorized Reseller Certificates Database <span
+                                            class="badge badge-secondary">Beta</span></h1>
+                                </div>
+                            </div>
+
+                            <!--begin::Card header-->
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                <!--begin::Card title-->
+                                <div class="card-title">
+                                    <!--begin::Search-->
+                                    <div class="d-flex align-items-center position-relative my-1">
+                                        <i class="ki-outline ki-magnifier fs-3 position-absolute ms-4"></i>
+                                        <input type="text" data-kt-ecommerce-order-filter="search"
+                                            class="form-control form-control-solid w-250px ps-12"
+                                            placeholder="Search Authorized Reseller Certificate" />
+                                    </div>
+                                    <!--end::Search-->
+                                </div>
+                                <!--end::Card title-->
+                                <!--begin::Card toolbar-->
+                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                                    <!--begin::Flatpickr-->
+                                    <div class="input-group w-250px">
+                                        <input class="form-control form-control-solid rounded rounded-end-0"
+                                            placeholder="Pick date range" id="kt_ecommerce_sales_flatpickr" />
+                                        <button class="btn btn-icon btn-light" id="kt_ecommerce_sales_flatpickr_clear">
+                                            <i class="ki-outline ki-cross fs-2"></i>
+                                        </button>
+                                    </div>
+                                    <!--end::Flatpickr-->
+                                    <div class="w-100 mw-150px">
+                                        <!--begin::Select2-->
+                                        <select class="form-select form-select-solid" data-control="select2"
+                                            data-hide-search="true" data-placeholder="Status"
+                                            data-kt-ecommerce-order-filter="status">
+                                            <option></option>
+                                            <option value="all">All</option>
+                                            <option value="Suspended">Suspended</option>
+                                            <option value="Expired">Expired</option>
+                                            <option value="Revoked">Revoked</option>
+                                            <option value="Active">Active</option>
+                                        </select>
+                                        <!--end::Select2-->
+                                    </div>
+                                    <!--begin::Add product-->
+                                    <a href="../../demo44/dist/apps/ecommerce/catalog/add-product.html"
+                                        class="btn btn-primary">Generate Certificate</a>
+                                    <!--end::Add product-->
+                                </div>
+                                <!--end::Card toolbar-->
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                <!--begin::Table-->
+                                <table class="table align-middle table-row-dashed fs-6 gy-5"
+                                    id="kt_ecommerce_sales_table">
+                                    <thead>
+                                        <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                            <th class="min-w-100px">Certificate Code</th>
+                                            <th class="min-w-175px">Reseller Business Name</th>
+                                            <th class="text-end min-w-70px">Status</th>
+                                            <th class="text-end min-w-100px">Validity</th>
+                                            <th class="text-end min-w-100px">Date Issued</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fw-semibold text-gray-600">
+                                        <tr>
+                                            <td data-kt-ecommerce-order-filter="order_id">
+                                                01GYM6SBWEFB4BKQQ75QPXBAD0
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin:: Avatar -->
+                                                    <p class="text-gray-800 text-hover-primary fs-5 fw-bold">Ethan
+                                                        Wilder
+                                                    </p>
+                                                    <!--end::Title-->
+                                                </div>
+                                            </td>
+                                            <td class="text-end pe-0" data-order="Active">
+                                                <!--begin::Badges-->
+                                                <div class="badge badge-light-info">Active</div>
+                                                <!--end::Badges-->
+                                            </td>
+
+                                            <td class="text-end" data-order="2024-04-21">
+                                                <span class="fw-bold">21/04/2024</span>
+                                            </td>
+                                            <td class="text-end" data-order="2023-04-21">
+                                                <span class="fw-bold">21/04/2023</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td data-kt-ecommerce-order-filter="order_id">
+                                                81DPN4BGUQ8W2FFA33SSRHJDU4
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin:: Avatar -->
+                                                    <p class="text-gray-800 text-hover-primary fs-5 fw-bold">Sophie
+                                                        Thompson
+                                                    </p>
+                                                    <!--end::Title-->
+                                                </div>
+                                            </td>
+                                            <td class="text-end pe-0" data-order="Suspended">
+                                                <!--begin::Badges-->
+                                                <div class="badge badge-light-danger">Suspended</div>
+                                                <!--end::Badges-->
+                                            </td>
+                                            <td class="text-end" data-order="2023-06-11">
+                                                <span class="fw-bold">11/06/2023</span>
+                                            </td>
+                                            <td class="text-end" data-order="2023-04-24">
+                                                <span class="fw-bold">24/04/2023</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-kt-ecommerce-order-filter="order_id">
+                                                02YTJ3AFH5GV6WPKM99NQXFWC2
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin:: Avatar -->
+                                                    <p class="text-gray-800 text-hover-primary fs-5 fw-bold">Oliver Lee
+                                                    </p>
+                                                    <!--end::Title-->
+                                                </div>
+                                            </td>
+                                            <td class="text-end pe-0" data-order="Expired">
+                                                <!--begin::Badges-->
+                                                <div class="badge badge-light-warning">Expired</div>
+                                                <!--end::Badges-->
+                                            </td>
+                                            <td class="text-end" data-order="2023-08-02">
+                                                <span class="fw-bold">02/08/2023</span>
+                                            </td>
+                                            <td class="text-end" data-order="2022-08-02">
+                                                <span class="fw-bold">02/08/2022</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-kt-ecommerce-order-filter="order_id">
+                                                49FYK5BNXN9J7UDS68HPZVWME1
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin:: Avatar -->
+                                                    <p class="text-gray-800 text-hover-primary fs-5 fw-bold">Ava Cooper
+                                                    </p>
+                                                    <!--end::Title-->
+                                                </div>
+                                            </td>
+                                            <td class="text-end pe-0" data-order="Revoked">
+                                                <!--begin::Badges-->
+                                                <div class="badge badge-light-danger">Revoked</div>
+                                                <!--end::Badges-->
+                                            </td>
+                                            <td class="text-end" data-order="2023-09-18">
+                                                <span class="fw-bold">18/09/2023</span>
+                                            </td>
+                                            <td class="text-end" data-order="2023-04-18">
+                                                <span class="fw-bold">18/04/2023</span>
+                                            </td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                                <!--end::Table-->
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                    </div>
+                    <!-- <div class="d-flex justify-content-end">
+                        <button type="reset" class="btn btn-light me-5">Clear All</button>
+                        <button class="btn btn-primary" type="submit" id="authorized-reseller-submit">
+                            <span class="indicator-label"> Generate Certificate</span>
+                            <span class="indicator-progress">
+                                Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js "></script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <!--end::Vendors Javascript-->
+    <!--begin::Custom Javascript(used for this page only)-->
+    <script src="assets/js/custom/listing.js"></script>
+</body>
+
+</html>
