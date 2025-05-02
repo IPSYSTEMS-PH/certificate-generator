@@ -222,14 +222,6 @@
             };
             const formattedDate = date1.toLocaleDateString('en-US', options);
 
-            if (e.target.value == "c1") {
-                opening_phrase.value = "This is to certify that:";
-                certificate_statement.value = "has attended the [Name of the event, workshop, or training program] " + program_name + " held at [Name of the organization] on [Date of the event]" + formattedDate;
-            } else if (e.target.value == "c2") {
-                opening_phrase.value = "This is to certify that:";
-                certificate_statement.value = "has successfully completed the [Name of the program or course]  " + program_name + " offered by [Name of the organization] on [Date of completion]" + formattedDate;
-            }
-
         }
     </script>
     <script>
@@ -313,7 +305,7 @@
 
             doc.setFontSize(20);
             doc.setTextColor(0, 0, 0);
-            doc.text(certificate_statement, x, 140, {
+            doc.text(certificate_statement.value, x, 140, {
                 align: 'center',
                 maxWidth: 194,
                 lineHeightFactor: 1.5,
