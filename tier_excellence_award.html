@@ -235,23 +235,6 @@
     <script>
         "use strict";
 
-        function getDaySuffix(day) {
-            if (day >= 11 && day <= 13) {
-                return "th";
-            }
-            switch (day % 10) {
-                case 1:
-                    return "st";
-                case 2:
-                    return "nd";
-                case 3:
-                    return "rd";
-                default:
-                    return "th";
-            }
-        }
-
-
         function generate_data() {
             var jsPDF = window.jspdf.jsPDF;
 
@@ -338,13 +321,13 @@
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(18);
             doc.setTextColor(0, 0, 0);
-            const suffix = getDaySuffix(day);
-            const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
-            doc.text(text5, x, 165, {
-                align: 'center',
-                maxWidth: 120,
-                lineHeightFactor: 1.5,
-            }); //138
+            // const suffix = getDaySuffix(day);
+            // const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
+            // doc.text(text5, x, 165, {
+            //     align: 'center',
+            //     maxWidth: 120,
+            //     lineHeightFactor: 1.5,
+            // }); //138
 
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(16);
@@ -373,7 +356,7 @@
             // doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 300);
             // Add the selected brands logos
 
-            doc.save(ULID.ulid() + " - " + attendee_name.value + ".pdf");
+            doc.save(ULID.ulid() + " - " + organization_name.value + ".pdf");
         }
 
         // Class definition
@@ -389,7 +372,7 @@
                 validation = FormValidation.formValidation(
                     form, {
                     fields: {
-                        attendee_name: {
+                        organization_name: {
                             validators: {
                                 notEmpty: {
                                     message: "Attendee Name is required"
