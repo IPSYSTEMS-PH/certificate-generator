@@ -306,14 +306,11 @@
 
             doc.setFontSize(13.5);
             doc.setTextColor(0, 0, 0);
-            doc.text(certificate_statement.value, 25, 120, {
+            doc.text(certificate_statement.value, 26, 120, {
                 align: 'left',
-                maxWidth: 120,
+                maxWidth: 128,
                 lineHeightFactor: 1.5,
             });
-            doc.setFont("Source Sans Pro", "normal");
-            doc.setFontSize(18);
-            doc.setTextColor(0, 0, 0);
             // const suffix = getDaySuffix(day);
             // const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
             // doc.text(text5, x, 165, {
@@ -324,26 +321,26 @@
 
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(12);
-            doc.text(group_leader_name.value, 175, 180, {
+            doc.text(group_leader_name.value, 178, 178, {
                 lineHeightFactor: 1.3,
                 align: 'center',
             });
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(12);
-            doc.text(group_leader_position.value, 175, 183, {
+            doc.text(group_leader_position.value, 178, 183, {
                 lineHeightFactor: 1.3,
                 align: 'center',
             });
 
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(12);
-            doc.text(sales_manager_name.value, 300, 180, {
+            doc.text(sales_manager_name.value, 278, 178, {
                 lineHeightFactor: 1.3,
                 align: 'center',
             });
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(12);
-            doc.text(sales_manager_position.value, 300, 183, {
+            doc.text(sales_manager_position.value, 278, 183, {
                 lineHeightFactor: 1.3,
                 align: 'center',
             });
