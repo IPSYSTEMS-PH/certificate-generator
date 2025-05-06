@@ -356,7 +356,7 @@
                     });
 
                     // Add signatures and details for Group Leader
-                    doc.addImage(group_leader_signature, 'PNG', 177, 170, 0, 40, {
+                    doc.addImage(group_leader_signature, 'PNG', 170, 170, 0, 10, {
                         align: 'center',
                     });
                     doc.setFont("Poppins", "Semibold");
@@ -373,7 +373,7 @@
                     });
 
                     // Add signatures and details for Sales Manager
-                    doc.addImage(sales_manager_signature, 'PNG', 244, 170, 0, 40, {
+                    doc.addImage(sales_manager_signature, 'PNG', 240, 170, 0, 10, {
                         align: 'center',
                     });
                     doc.setFont("Poppins", "Semibold");
@@ -390,6 +390,8 @@
                     });
 
                     // Add unique ID at the bottom
+                    doc.setFont("Source Sans Pro", "normal");
+                    doc.setFontSize(9);
                     var uniq_id = ULID.ulid();
                     doc.text(uniq_id, 244, 200);
 
