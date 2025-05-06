@@ -254,35 +254,23 @@
         function generate_data() {
             var jsPDF = window.jspdf.jsPDF;
 
-            // Function to update the certificate statement based on the selected tier
-            function updateCertificateStatement() {
-                var badge_img;
-                var statementText;
+            // Variables
+            var organization_name = document.getElementById("organization_name");
+            var tier = document.getElementById("tier");
+            var excellence_category = document.getElementById("excellence_category");
+            var certificate_statement = document.getElementById("certificate_statement");
 
-                // Update the badge and certificate statement based on the selected tier
-                if (tier.value === "Bronze") {
-                    badge_img = "bronze_badge_2025.png";
-                    statementText = `In recognition of their outstanding performance in achieving their <strong>${excellence_category.value}</strong> targets for 2025 as a <strong>${tier.value}</strong> Tier Partner.`;
-                } else if (tier.value === "Silver") {
-                    badge_img = "silver_badge_2025.png";
-                    statementText = `In recognition of their outstanding performance in achieving their <strong>${excellence_category.value}</strong> targets for 2025 as a <strong>${tier.value}</strong> Tier Partner.`;
-                } else if (tier.value === "Gold") {
-                    badge_img = "gold_badge_2025.png";
-                    statementText = `In recognition of their outstanding performance in achieving their <strong>${excellence_category.value}</strong> targets for 2025 as a <strong>${tier.value}</strong> Tier Partner.`;
-                } else if (tier.value === "Metal") {
-                    badge_img = "metal_badge_2025.png";
-                    statementText = `In recognition of their outstanding performance in achieving their <strong>${excellence_category.value}</strong> targets for 2025 as a <strong>${tier.value}</strong> Tier Partner.`;
-                }
-
-                // Set the formatted statement inside the editable div
-                certificate_statement.innerHTML = statementText;
+            // Get the selected badge image based on the tier
+            var badge_img;
+            if (tier.value == "Bronze") {
+                badge_img = "bronze_badge_2025.png";
+            } else if (tier.value == "Silver") {
+                badge_img = "silver_badge_2025.png";
+            } else if (tier.value == "Gold") {
+                badge_img = "gold_badge_2025.png";
+            } else if (tier.value == "Metal") {
+                badge_img = "metal_badge_2025.png";
             }
-
-            // Event listener to update the certificate statement when the tier is selected
-            tier.addEventListener("change", updateCertificateStatement);
-
-            // Call the function once to set the initial state (optional)
-            updateCertificateStatement();
 
             const date_issue = document.getElementById("date_issue").value;
             const date = new Date(date_issue);
