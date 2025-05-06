@@ -34,11 +34,12 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Reseller:</label>
+                                            <label class="required form-label">Reseller Name:</label>
                                             <input type="text" name="organization_name" id="organization_name"
                                                 value="Productions Technologies Services, Inc."
                                                 class="form-control mb-2" placeholder="Enter the organization name" />
-                                            <div class="text-muted fs-7">...</div>
+                                            <div class="text-muted fs-7">Enter the full name of the reseller being
+                                                recognized.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root">
@@ -49,7 +50,7 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Partnership Level:</label>
+                                            <label class="required form-label">Partnership Tier:</label>
                                             <select name="tier" id="tier" class="form-select"
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
                                                 <option selected>Please select</option>
@@ -58,7 +59,8 @@
                                                 <option value="Bronze">Bronze</option>
                                                 <option value="Metal">Metal</option>
                                             </select>
-                                            <div class="text-muted fs-7">e.g Gold, Silver, Bronze, Metal</div>
+                                            <div class="text-muted fs-7">Select the partner’s tier level (e.g., Gold,
+                                                Silver, Bronze, Metal).</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -69,7 +71,7 @@
                                 <div class="mb-5 fv-row mt-10">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Excellence Award Category:</label>
+                                            <label class="required form-label">Award Category:</label>
                                             <select name="excellence_category" id="excellence_category"
                                                 class="form-select"
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
@@ -77,7 +79,7 @@
                                                 <option value="Quarterly">Quarterly</option>
                                                 <option value="Yearly">Yearly</option>
                                             </select>
-                                            <div class="text-muted fs-7">e.g Quarterly, Yearly</div>
+                                            <div class="text-muted fs-7">Select the type of award being issued.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -86,11 +88,10 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Enter Quarter and Year for Quarter/Year
-                                                for Yearly:</label>
+                                            <label class="required form-label">Quarter/Year</label>
                                             <input type="text" name="year" id="year" class="form-control mb-2"
                                                 placeholder="e.g. This certificate is awarded to..." />
-                                            <div class="text-muted fs-7">...</div>
+                                            <div class="text-muted fs-7">eg. Q1, 2025</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -99,12 +100,13 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-200 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Statement:</label>
+                                            <label class="required form-label">Recognition Statement:</label>
                                             <textarea type="text" name="certificate_statement"
                                                 id="certificate_statement" class="form-control mb-2"
                                                 placeholder="Enter program/course name here" rows="5">In recognition of their outstanding performance in achieving their Q1 targets for 2025 as a Silver Tier Partner.
                                             </textarea>
-                                            <div class="text-muted fs-7">...</div>
+                                            <div class="text-muted fs-7">Write a brief message acknowledging the
+                                                partner's achievement.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -115,11 +117,11 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Date of Issuance:</label>
+                                            <label class="required form-label">Issuance Date:</label>
                                             <input type="date" name="date_issue" id="date_issue" value="2017-06-01"
                                                 class="form-control mb-2" />
-                                            <div class="text-muted fs-7">Please enter the date when the certificate will
-                                                be issued.</div>
+                                            <div class="text-muted fs-7">Please select the date this certificate will be
+                                                issued.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -314,10 +316,10 @@
                     // Set text for the certificate title and details
                     doc.setTextColor(0, 0, 0);
                     doc.setFont("Poppins", "Semibold");
-                    doc.setFontSize(24);
+                    doc.setFontSize(28);
                     doc.text(excellence_category.value + " Excellence Award", 26, 65, {
                         align: 'left',
-                        charSpace: 0.45,
+                        //charSpace: 0.45,
                         lineHeightFactor: 1.3,
                     });
 
