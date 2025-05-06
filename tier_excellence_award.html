@@ -227,6 +227,23 @@
     <script>
         "use strict";
 
+        function getDaySuffix(day) {
+            if (day >= 11 && day <= 13) {
+                return "th";
+            }
+            switch (day % 10) {
+                case 1:
+                    return "st";
+                case 2:
+                    return "nd";
+                case 3:
+                    return "rd";
+                default:
+                    return "th";
+            }
+        }
+
+
         function generate_data() {
             var jsPDF = window.jspdf.jsPDF;
 
@@ -237,11 +254,12 @@
             var certificate_statement = document.getElementById("certificate_statement");
             const date_issue = document.getElementById("date_issue").value;
             const date = new Date(date_issue);
-            const year = date.getFullYear();
-            const month = date.toLocaleString('default', {
-                month: 'long'
-            });
-            const day = date.getDate();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const formattedDate = date.toLocaleDateString('en-US', options);
 
             var group_leader_name = document.getElementById("group_leader_name");
             var group_leader_position = document.getElementById("group_leader_position");
@@ -333,18 +351,14 @@
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(14);
             doc.setTextColor(0, 0, 0);
-            doc.text("Given this 24th day of April 2025", 25.3, 151, {
+            const suffix = getDaySuffix(day);
+            const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
+            doc.text(text5, 25.3, 151, {
                 align: 'left',
                 maxWidth: 128,
+                charSpace: 0.45,
                 lineHeightFactor: 1.5,
-            });
-            // const suffix = getDaySuffix(day);
-            // const text5 = "Given this " + day + suffix + " day of " + month + " " + year;
-            // doc.text(text5, x, 165, {
-            //     align: 'center',
-            //     maxWidth: 120,
-            //     lineHeightFactor: 1.5,
-            // }); //138
+            }); //138
 
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(12);
