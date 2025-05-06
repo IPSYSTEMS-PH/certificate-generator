@@ -53,10 +53,10 @@
                                             <select name="tier" id="tier" class="form-select"
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
                                                 <option selected>Please select</option>
-                                                <option value="">Gold</option>
-                                                <option value="">Silver</option>
-                                                <option value="">Bronze</option>
-                                                <option value="">Metal</option>
+                                                <option value="Gold">Gold</option>
+                                                <option value="Silver">Silver</option>
+                                                <option value="Bronze">Bronze</option>
+                                                <option value="Metal">Metal</option>
                                             </select>
                                             <div class="text-muted fs-7">e.g Gold, Silver, Bronze, Metal</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -252,6 +252,22 @@
             var tier = document.getElementById("tier");
             var excellence_category = document.getElementById("excellence_category");
             var certificate_statement = document.getElementById("certificate_statement");
+
+            var badge_img;
+            if (tier.value == "Bronze") {
+                badge_img = "bronze_badge_2025.png";
+            } else if (tier.value == "Silver") {
+                badge_img = "silver_badge_2025.png";
+            } else if (tier.value == "Gold") {
+                badge_img = "gold_badge_2025.png";
+            } else if (tier.value == "Metal") {
+                badge_img = "metal_badge_2025.png";
+            } else {
+                // Handle other cases
+            }
+
+
+
             const date_issue = document.getElementById("date_issue").value;
             const date = new Date(date_issue);
             const options = {
@@ -276,26 +292,9 @@
             doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 210);
             //   doc.addImage(brand_img, 'PNG', 224.74, 33, 40, 10);
 
-            // doc.setFont("Poppins", "Semibold");
-            // doc.setFontSize(36);
-            // doc.setTextColor(253, 154, 36);
-            // const text = certificate_title;
-            // const textWidth = doc.getTextWidth(text);
-            // const textHeight = doc.getTextDimensions(text).h;
-            // doc.text(certificate_title, x, 66, {
-            //     align: 'center',
-            //     lineHeightFactor: 1.5,
-            // });
 
-
-            // doc.setFontSize(10.5);
-            // doc.setTextColor(0, 0, 0);
-            // doc.setFont("Source Sans Pro", "normal");
-            // const text1 = opening_phrase.value;
-            // doc.text(text1, x, 80, {
-            //     align: 'center',
-            //     lineHeightFactor: 1.5,
-            // });
+            doc.setTextColor(0, 0, 0);
+            doc.addImage(badge_img, 130, 20, 0, 50);
 
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(24);
