@@ -145,8 +145,8 @@
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"><label class="required form-label">
                                                 Signature</label>
-                                            <input type="file" name="" id="" class="form-control mb-2" placeholder="..."
-                                                value="" />
+                                            <input type="file" name="group_leader_signature" id="group_leader_signature"
+                                                class="form-control mb-2" placeholder="..." value="" />
                                             <div class="text-muted fs-7">...</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
@@ -171,7 +171,8 @@
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"><label class="required form-label">
                                                 Signature</label>
-                                            <input type="file" name="" id="" class="form-control mb-2" placeholder="..."
+                                            <input type="file" name="sales_manager_signature"
+                                                id="sales_manager_signature" class="form-control mb-2" placeholder="..."
                                                 value="" />
                                             <div class="text-muted fs-7">...</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -247,6 +248,7 @@
             var excellence_category = document.getElementById("excellence_category");
             var certificate_statement = document.getElementById("certificate_statement");
 
+
             var badge_img;
             if (tier.value == "Bronze") {
                 badge_img = "bronze_badge_2025.png";
@@ -272,6 +274,9 @@
             var group_leader_position = document.getElementById("group_leader_position");
             var sales_manager_name = document.getElementById("sales_manager_name");
             var sales_manager_position = document.getElementById("sales_manager_position");
+            // Get the selected signature files (Group Leader and Sales Manager)
+            const groupLeaderFile = document.getElementById("group_leader_signature").files[0];
+            const salesManagerFile = document.getElementById("sales_manager_signature").files[0];
 
             var doc = new jsPDF('landscape');
             const x = doc.internal.pageSize.getWidth() / 2;
@@ -351,6 +356,7 @@
                 lineHeightFactor: 1.5,
             }); //138
 
+            doc.addImage(group_leader_signature, 'PNG', 177, 170, 40, 10,);
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(12);
             doc.text(group_leader_name.value, 177, 178, {
@@ -364,6 +370,8 @@
                 align: 'center',
             });
 
+
+            doc.addImage(sales_manager_signature, 'PNG', 244, 170, 40, 10,);
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(12);
             doc.text(sales_manager_name.value, 244, 178, {
