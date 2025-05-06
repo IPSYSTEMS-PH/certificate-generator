@@ -264,12 +264,16 @@
             var badge_img;
             if (tier.value == "Bronze") {
                 badge_img = "bronze_badge_2025.png";
+                certificate_statement.value = `In recognition of their outstanding performance in achieving their ${excellence_category.value} targets for 2025 as a ${tier.value} Tier Partner.`;
             } else if (tier.value == "Silver") {
                 badge_img = "silver_badge_2025.png";
+                certificate_statement.value = `In recognition of their outstanding performance in achieving their ${excellence_category.value} targets for 2025 as a ${tier.value} Tier Partner.`;
             } else if (tier.value == "Gold") {
                 badge_img = "gold_badge_2025.png";
+                certificate_statement.value = `In recognition of their outstanding performance in achieving their ${excellence_category.value} targets for 2025 as a ${tier.value} Tier Partner.`;
             } else if (tier.value == "Metal") {
                 badge_img = "metal_badge_2025.png";
+                certificate_statement.value = `In recognition of their outstanding performance in achieving their ${excellence_category.value} targets for 2025 as a ${tier.value} Tier Partner.`;
             }
 
             const date_issue = document.getElementById("date_issue").value;
@@ -350,7 +354,7 @@
                     });
 
                     const suffix = getDaySuffix(day);
-                    const text5 = `Given this ${day}${suffix} day of ${month} ${year}`;
+                    const text5 = `Given this \b${day}${suffix} day of ${month} ${year}`;
                     doc.text(text5, 25.3, 151, {
                         align: 'left',
                         maxWidth: 128,
