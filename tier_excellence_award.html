@@ -74,8 +74,8 @@
                                                 class="form-select"
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
                                                 <option selected>Please select</option>
-                                                <option value="">Quarterly</option>
-                                                <option value="">Yearly</option>
+                                                <option value="Quarterly">Quarterly</option>
+                                                <option value="Yearly">Yearly</option>
                                             </select>
                                             <div class="text-muted fs-7">e.g Quarterly, Yearly</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -266,8 +266,6 @@
                 // Handle other cases
             }
 
-
-
             const date_issue = document.getElementById("date_issue").value;
             const date = new Date(date_issue);
             const options = {
@@ -299,7 +297,7 @@
             doc.setFont("Poppins", "Semibold");
             doc.setFontSize(24);
             doc.setTextColor(0, 0, 0);
-            doc.text("Quarterly Excellence Award", 26, 65, {
+            doc.text(excellence_category.value + " Excellence Award", 26, 65, {
                 align: 'left',
                 charSpace: 0.45,
                 lineHeightFactor: 1.3,
