@@ -350,12 +350,16 @@
                     });
 
                     const suffix = getDaySuffix(day);
-                    const text5 = `Given this ${day}${suffix} day of ${month} ${year}`;
-                    doc.text(text5, 25.3, 151, {
+                    const normalText = "Given this ";
+
+                    doc.text(normalText, 25.3, 151, {
                         align: 'left',
                         maxWidth: 128,
                         lineHeightFactor: 1.5,
                     });
+                    const boldText = `${day}${suffix} day of ${month} ${year}`;
+                    doc.setFont("Source Sans Pro", "bold");
+                    doc.text(boldText, doc.getTextWidth(normalText) + 25.3, 151);
 
                     // Add signatures and details for Group Leader
                     doc.addImage(group_leader_signature, 'PNG', 163, 155, 0, 20, {
