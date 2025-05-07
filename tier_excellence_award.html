@@ -36,8 +36,8 @@
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                             <label class="required form-label">Reseller Name:</label>
                                             <input type="text" name="organization_name" id="organization_name"
-                                                value="Productions Technologies Services, Inc."
-                                                class="form-control mb-2" placeholder="Enter the organization name" />
+                                                value="IPSYSTEMS, Inc." class="form-control mb-2"
+                                                placeholder="Enter the organization name" />
                                             <div class="text-muted fs-7">Enter the full name of the reseller being
                                                 recognized.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -357,9 +357,10 @@
                         maxWidth: 128,
                         lineHeightFactor: 1.5,
                     });
+
+                    doc.setFont("Source Sans Pro", "Bold");
                     const boldText = `${day}${suffix} day of ${month} ${year}`;
-                    doc.setFont("Source Sans Pro", "bold");
-                    doc.text(boldText, doc.getTextWidth(normalText) + 25.3, 151);
+                    doc.text(boldText, doc.getTextWidth(normalText) + 25, 151);
 
                     // Add signatures and details for Group Leader
                     doc.addImage(group_leader_signature, 'PNG', 163, 155, 0, 20, {
