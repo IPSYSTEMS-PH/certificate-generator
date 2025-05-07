@@ -309,6 +309,7 @@
                     // Add fonts and images
                     doc.addFont("Poppins-SemiBold.ttf", "Poppins", "Semibold");
                     doc.addFont("SourceSansPro-Regular.ttf", "Source Sans Pro", "normal");
+                    doc.addFont("SourceSansPro-Bold.ttf", "Source Sans Pro", "bold");
                     doc.addImage(imgDatasample, 'PNG', 0, 0, 0, 210); // Background image
 
                     doc.addImage(badge_img, 'PNG', 186, 78, 0, 55); // Badge image
@@ -351,14 +352,13 @@
 
                     const suffix = getDaySuffix(day);
                     const normalText = "Given this ";
-
                     doc.text(normalText, 25.3, 151, {
                         align: 'left',
                         maxWidth: 128,
                         lineHeightFactor: 1.5,
                     });
 
-                    doc.setFont("Source Sans Pro", "Bold");
+                    doc.setFont("Source Sans Pro", "bold");
                     const boldText = `${day}${suffix} day of ${month} ${year}`;
                     doc.text(boldText, doc.getTextWidth(normalText) + 25, 151);
 
