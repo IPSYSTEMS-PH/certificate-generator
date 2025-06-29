@@ -285,11 +285,29 @@
                         lineHeightFactor: 1.3,
                     });
 
-                    const suffix = getDaySuffix(day);
+
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(18);
                     doc.setTextColor(0, 0, 0);
-                    doc.text(["In recognition of his/her active participation during the", certificate_statement.value, `Held on ${suffix}`], x, 122, {
+                    doc.text("In recognition of his/her active participation during the", x, 122, {
+                        align: 'center',
+                        maxWidth: 150,
+                        lineHeightFactor: 1.5,
+                    });
+
+                    // Line 2 — Bold and Larger
+                    doc.setFont("Source Sans Pro", "bold");
+                    doc.setFontSize(24);
+                    doc.text(certificate_statement.value, x, 132, {
+                        align: 'center',
+                        maxWidth: 150,
+                        lineHeightFactor: 1.5,
+                    });
+
+                    // Line 3 — Normal again
+                    doc.setFont("Source Sans Pro", "normal");
+                    doc.setFontSize(18);
+                    doc.text(`Held on ${month} ${String(day).padStart(2, '0')}, ${year}`, x, 142, {
                         align: 'center',
                         maxWidth: 150,
                         lineHeightFactor: 1.5,
