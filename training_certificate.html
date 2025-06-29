@@ -261,7 +261,7 @@
                 readImageAsBase64(groupLeaderFile),
                 //     readImageAsBase64(salesManagerFile)
             ])
-                .then(([group_leader_signature, sales_manager_signature]) => {
+                .then(([group_leader_signature]) => {
                     var doc = new jsPDF('landscape');
                     const x = doc.internal.pageSize.getWidth() / 2;
                     const y = doc.internal.pageSize.getHeight() / 2;
