@@ -250,11 +250,10 @@
             //const salesManagerFile = document.getElementById("sales_manager_signature").files[0];
 
             // Ensure both signature files are selected
-            //  if (!groupLeaderFile || !salesManagerFile) {
-            if (groupLeaderFile || !salesManagerFile) {
-                alert("Please select both Group Leader and Sales Manager signature files.");
-                return;
-            }
+            // if (!groupLeaderFile || !salesManagerFile) {
+            //     alert("Please select both Group Leader and Sales Manager signature files.");
+            //     return;
+            // }
 
             // Read both signature files in parallel
             Promise.all([
