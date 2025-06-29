@@ -313,6 +313,13 @@
                         lineHeightFactor: 1.5,
                     });
 
+                    const suffix = getDaySuffix(day);
+                    const normalText = "Given this ";
+                    doc.text(normalText, 25.3, 151, {
+                        align: 'left',
+                        maxWidth: 128,
+                        lineHeightFactor: 1.5,
+                    });
 
                     doc.setFont("Source Sans Pro", "bold");
                     const boldText = `${day}${suffix} day of ${month} ${year}`;
