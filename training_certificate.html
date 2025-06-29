@@ -57,13 +57,10 @@
                                 <div class="mb-5 fv-row mt-10">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Award Category:</label>
-                                            <select name="excellence_category" id="excellence_category"
-                                                class="form-select"
+                                            <label class="required form-label">Brand:</label>
+                                            <select name="brand" id="brand" class="form-select"
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
                                                 <option selected>Please select</option>
-                                                <option value="Quarterly">Quarterly</option>
-                                                <option value="Yearly">Yearly</option>
                                             </select>
                                             <div class="text-muted fs-7">Select the type of award being issued.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -230,21 +227,10 @@
 
             // Variables
             var organization_name = document.getElementById("organization_name");
-            var tier = document.getElementById("tier");
-            var excellence_category = document.getElementById("excellence_category");
+            //  var tier = document.getElementById("tier");
+            //var excellence_category = document.getElementById("excellence_category");
             var certificate_statement = document.getElementById("certificate_statement");
 
-            // Get the selected badge image based on the tier
-            var badge_img;
-            if (tier.value == "Bronze") {
-                badge_img = "bronze_badge_2025.png";
-            } else if (tier.value == "Silver") {
-                badge_img = "silver_badge_2025.png";
-            } else if (tier.value == "Gold") {
-                badge_img = "gold_badge_2025.png";
-            } else if (tier.value == "Metal") {
-                badge_img = "metal_badge_2025.png";
-            }
 
             const date_issue = document.getElementById("date_issue").value;
             const date = new Date(date_issue);
