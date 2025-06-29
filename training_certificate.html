@@ -74,7 +74,7 @@
                                             <label class="required form-label">Recognition Statement:</label>
                                             <textarea type="text" name="certificate_statement"
                                                 id="certificate_statement" class="form-control mb-2"
-                                                placeholder="Enter program/course name here" rows="5">In recognition of their outstanding performance in achieving their Q1 targets for 2025 as a Silver Tier Partner.
+                                                placeholder="Enter program/course name here" rows="5">In recognition of his/her active participation during the Bitdefender Product Mastery Training held on 
                                             </textarea>
                                             <div class="text-muted fs-7">Write a brief message acknowledging the
                                                 partner's achievement.</div>
@@ -279,25 +279,25 @@
 
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(14);
-                    doc.text("This certificate is presented to", x, 75, {
+                    doc.text("This certificate is presented to", x, 73, {
                         align: 'center',
                         maxWidth: 128,
                         lineHeightFactor: 1.5,
                     });
 
                     doc.setFont("Poppins", "Semibold");
-                    doc.setFontSize(28);
+                    doc.setFontSize(32);
                     doc.setTextColor(243, 117, 42);
-                    doc.text(full_name.value, x, 100, {
+                    doc.text(full_name.value, x, 95, {
                         align: 'center',
                         maxWidth: 150,
                         lineHeightFactor: 1.3,
                     });
 
-                    doc.setFont("Poppins", "Semibold");
+                    doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(14);
                     doc.setTextColor(0, 0, 0);
-                    doc.text(organization_name.value, x, 105, {
+                    doc.text(organization_name.value, x, 103, {
                         align: 'center',
                         maxWidth: 150,
                         lineHeightFactor: 1.3,
@@ -307,7 +307,7 @@
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(18);
                     doc.setTextColor(0, 0, 0);
-                    doc.text(certificate_statement.value, x, 120, {
+                    doc.text(certificate_statement.value, x, 122, {
                         align: 'center',
                         maxWidth: 128,
                         lineHeightFactor: 1.5,
@@ -326,18 +326,18 @@
                     doc.text(boldText, doc.getTextWidth(normalText) + 25, 151);
 
                     // Add signatures and details for Group Leader
-                    doc.addImage(group_leader_signature, 'PNG', 163, 155, 0, 20, {
+                    doc.addImage(group_leader_signature, 'PNG', x, 155, 0, 20, {
                         align: 'center',
                     });
                     doc.setFont("Poppins", "Semibold");
                     doc.setFontSize(12);
-                    doc.text(group_leader_name.value, 177, 178, {
+                    doc.text(group_leader_name.value, x, 178, {
                         lineHeightFactor: 1.3,
                         align: 'center',
                     });
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(12);
-                    doc.text(group_leader_position.value, 177, 183, {
+                    doc.text(group_leader_position.value, x, 183, {
                         lineHeightFactor: 1.3,
                         align: 'center',
                     });
@@ -346,7 +346,7 @@
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(9);
                     var uniq_id = ULID.ulid();
-                    doc.text(uniq_id, 244, 200);
+                    doc.text(uniq_id, x, 200);
 
                     // Save the PDF
                     doc.save(ULID.ulid() + " - " + organization_name.value + ".pdf");
