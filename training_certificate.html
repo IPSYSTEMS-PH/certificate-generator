@@ -308,9 +308,7 @@
                     // doc.text(boldText, doc.getTextWidth(normalText) + 25, 151);
 
                     // Add signatures and details for Group Leader
-                    doc.addImage(group_leader_signature, 'PNG', x, 160, 0, 20, {
-                        align: 'center',
-                    });
+                    doc.addImage(group_leader_signature, 'PNG', x, 150, 40, 20);
                     doc.setFont("Poppins", "Semibold");
                     doc.setFontSize(14);
                     doc.text(group_leader_name.value, x, 172, {
