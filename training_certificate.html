@@ -239,7 +239,7 @@
                     var doc = new jsPDF('landscape');
                     const x = doc.internal.pageSize.getWidth() / 2;
                     const y = doc.internal.pageSize.getHeight() / 2;
-                    var imgDatasample = "Certificate of Participation - With Content.png"; // Background image
+                    var imgDatasample = "Certificate of Participation New with Logo BD.png"; // Background image
 
                     // Add fonts and images
                     doc.addFont("Poppins-SemiBold.ttf", "Poppins", "Semibold");
@@ -308,7 +308,7 @@
                     // doc.text(boldText, doc.getTextWidth(normalText) + 25, 151);
 
                     // Add signatures and details for Group Leader
-                    doc.addImage(group_leader_signature, 'PNG', x, 150, 40, 20);
+                    doc.addImage(group_leader_signature, 'PNG', 75.5, 150, 0, 20);
                     doc.setFont("Poppins", "Semibold");
                     doc.setFontSize(14);
                     doc.text(group_leader_name.value, x, 172, {
