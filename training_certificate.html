@@ -26,7 +26,8 @@
                         <div class="card card-flush py-4">
                             <div class="card-header">
                                 <div class="card-title">
-                                    <h1>Training Certificate <span class="badge badge-secondary">Beta</span></h1>
+                                    <h1>Training Certificate Generator<span class="badge badge-secondary">Beta</span>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="card-body pt-0">
@@ -37,8 +38,8 @@
                                             <label class="required form-label">Full Name:</label>
                                             <input type="text" name="full_name" id="full_name" value="Juan Dela Cruz"
                                                 class="form-control mb-2" placeholder="Enter the full name" />
-                                            <div class="text-muted fs-7">Enter the full name of the person being
-                                                recognized.</div>
+                                            <div class="text-muted fs-7">Enter the recipient’s full name as it will
+                                                appear on the certificate.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root">
@@ -46,8 +47,8 @@
                                             <input type="text" name="organization_name" id="organization_name"
                                                 value="IPSYSTEMS, Inc." class="form-control mb-2"
                                                 placeholder="Enter the organization name" />
-                                            <div class="text-muted fs-7">Enter the organization name being
-                                                recognized.</div>
+                                            <div class="text-muted fs-7">Enter the full name of the organization to be
+                                                acknowledged.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                     </div>
@@ -62,7 +63,8 @@
                                                 data-placeholder="Please select the appropriate title for the certificate from the dropdown menu.">
                                                 <option selected>Please select</option>
                                             </select>
-                                            <div class="text-muted fs-7">Select the type of award being issued.</div>
+                                            <div class="text-muted fs-7">Choose the training provider or program brand.
+                                            </div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -71,12 +73,11 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-200 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Training Title:</label>
+                                            <label class="required form-label">Training or Program Title:</label>
                                             <textarea type="text" name="certificate_statement"
                                                 id="certificate_statement" class="form-control mb-2"
                                                 placeholder="Enter program/course name here" rows="5"></textarea>
-                                            <div class="text-muted fs-7">Write a brief message acknowledging the
-                                                partner's achievement.</div>
+                                            <div class="text-muted fs-7">e.g. Advanced Network Security Workshop</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -90,8 +91,8 @@
                                             <label class="required form-label">Held On:</label>
                                             <input type="date" name="date_issue" id="date_issue" value="2017-06-01"
                                                 class="form-control mb-2" />
-                                            <div class="text-muted fs-7">Please select the date this certificate will be
-                                                issued.</div>
+                                            <div class="text-muted fs-7">Select the official date the training took
+                                                place or was completed.</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
                                         <div class="fv-row w-100 flex-md-root"></div>
@@ -101,27 +102,21 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Group Leader:</label>
+                                            <label class=" form-label">Signatory:</label>
                                             <input type="text" name="group_leader_name" id="group_leader_name"
-                                                class="form-control mb-2" value="Josh Logro"
+                                                class="form-control mb-2" readonly value="Josh Logro"
                                                 placeholder="Please enter the full name of the certificate issuer, which will appear on the certificate." />
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
-                                        <div class="fv-row w-100 flex-md-root"><label class="required form-label">
+                                        <div class="fv-row w-100 flex-md-root"><label class=" form-label">
                                                 Position</label>
                                             <input type="text" name="group_leader_position" id="group_leader_position"
-                                                class="form-control mb-2"
+                                                class="form-control mb-2" readonly
                                                 placeholder="Please enter the position of the certificate issuer, which will appear below the signature on the certificate."
                                                 value="General Manager" />
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
-                                        <div class="fv-row w-100 flex-md-root"><label class="required form-label">
-                                                Signature</label>
-                                            <input type="file" name="group_leader_signature" id="group_leader_signature"
-                                                class="form-control mb-2" placeholder="..." value="" />
-                                            <div class="text-muted fs-7">...</div>
-                                            <div class="fv-plugins-message-container invalid-feedback"></div>
-                                        </div>
+
                                         <img id="jbl-signature" src="JBL Signature.png" style="display: none;" />
                                     </div>
                                 </div>
@@ -346,7 +341,7 @@
 
             // Add the position and company
             doc.setFont("Poppins", "Medium");
-            doc.setFontSize(12);
+            doc.setFontSize(10);
             doc.text([group_leader_position.value, "IPSYSTEMS, Inc."], doc.internal.pageSize.getWidth() / 2, 178, {
                 lineHeightFactor: 1.3,
                 align: 'center',
