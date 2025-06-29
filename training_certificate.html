@@ -252,9 +252,9 @@
                     doc.setFont("Poppins", "Semibold");
                     doc.setFontSize(32);
                     doc.setTextColor(0, 0, 0);
-                    doc.text("Certificate of Participation", x, 60, {
+                    doc.text("Certificate of Participation", x, 62, {
                         align: 'center',
-                        maxWidth: 150,
+
                         lineHeightFactor: 1.3,
                     });
 
@@ -319,7 +319,7 @@
                     });
                     doc.setFont("Source Sans Pro", "normal");
                     doc.setFontSize(14);
-                    doc.text(group_leader_position.value, x, 177, {
+                    doc.text([group_leader_position.value, "IPSYSTEMS, Inc."], x, 177, {
                         lineHeightFactor: 1.3,
                         align: 'center',
                     });
