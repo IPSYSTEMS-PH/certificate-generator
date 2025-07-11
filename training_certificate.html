@@ -273,18 +273,18 @@
             });
 
 
-            doc.setFont("Source Sans Pro", "normal");
-            doc.setFontSize(16);
-            doc.setTextColor(0, 0, 0);
-            doc.text("In recognition of his/her active participation during the", x, 122, {
-                align: 'center',
-                lineHeightFactor: 1.5,
-            });
+            // doc.setFont("Source Sans Pro", "normal");
+            // doc.setFontSize(16);
+            // doc.setTextColor(0, 0, 0);
+            // doc.text("In recognition of his/her active participation during the", x, 122, {
+            //     align: 'center',
+            //     lineHeightFactor: 1.5,
+            // });
 
             // Line 2 — Bold and Larger
             doc.setFont("Source Sans Pro", "bold");
             doc.setFontSize(18);
-            doc.text(certificate_statement.value, x, 132, {
+            doc.text(certificate_statement.value, x, 122, {
                 align: 'center',
                 lineHeightFactor: 1.5,
             });
@@ -292,7 +292,7 @@
             // Line 3 — Normal again
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(16);
-            doc.text(`Held on ${month} ${String(day).padStart(2, '0')}, ${year}`, x, 142, {
+            doc.text(`Held on ${month} ${String(day).padStart(2, '0')}, ${year}`, x, 132, {
                 align: 'center',
                 lineHeightFactor: 1.5,
             });
