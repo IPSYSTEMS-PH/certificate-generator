@@ -76,7 +76,8 @@
                                             <label class="required form-label">Training or Program Title:</label>
                                             <textarea type="text" name="certificate_statement"
                                                 id="certificate_statement" class="form-control mb-2"
-                                                placeholder="Enter program/course name here" rows="5"></textarea>
+                                                placeholder="Enter program/course name here"
+                                                rows="5">As a Bitdefender Technical Engineer</textarea>
                                             <div class="text-muted fs-7">e.g. Advanced Network Security Workshop</div>
                                             <div class="fv-plugins-message-container invalid-feedback"></div>
                                         </div>
@@ -88,7 +89,7 @@
                                 <div class="mb-5 fv-row">
                                     <div class="d-flex flex-wrap gap-5">
                                         <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
-                                            <label class="required form-label">Held On:</label>
+                                            <label class="required form-label">Valid Until:</label>
                                             <input type="date" name="date_issue" id="date_issue" value="2017-06-01"
                                                 class="form-control mb-2" />
                                             <div class="text-muted fs-7">Select the official date the training took
@@ -292,7 +293,7 @@
             // Line 3 — Normal again
             doc.setFont("Source Sans Pro", "normal");
             doc.setFontSize(16);
-            doc.text(`Held on ${month} ${String(day).padStart(2, '0')}, ${year}`, x, 132, {
+            doc.text(`Valid until ${month} ${String(day).padStart(2, '0')}, ${year}.`, x, 132, {
                 align: 'center',
                 lineHeightFactor: 1.5,
             });
