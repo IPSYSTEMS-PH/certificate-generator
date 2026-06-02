@@ -335,14 +335,20 @@
             doc.setProperties(logoProperties);
             let logoWidth = 36;
             let logoHeight = 9;
-            if (selectedBrands.length < 4) {
+
+            if (selectedBrands.length <= 4) {
                 logoWidth *= 1.3;
                 logoHeight *= 1.3;
                 certificate_statement = 200;
-            } else if (selectedBrands.length === 4) {
-                certificate_statement = 195;
-            } else if (selectedBrands.length > 4) {
-                certificate_statement = 212;
+            } else if (selectedBrands.length <= 8) {
+                if (selectedBrands.length === 4) {
+                    certificate_statement = 195;
+                } else {
+                    certificate_statement = 212;
+                }
+            } else {
+                // 9 or 10 brands — need a 3rd row, push statement down
+                certificate_statement = 228;
             }
 
             let currentX = 29;
@@ -350,13 +356,14 @@
             let logoCount = 0;
 
             selectedBrands.forEach((brand) => {
-                if (logos[brand.toLowerCase()] && logoCount < 8) { // limit to maximum of 8 logos (2 rows)
+                if (logos[brand.toLowerCase()] && logoCount < 10) { // increased limit to 10
                     const logo = logos[brand.toLowerCase()];
                     doc.addImage(logo, 'PNG', currentX, currentY, logoWidth, logoHeight);
                     currentX += logoWidth + 2.5;
                     logoCount++;
 
-                    if (logoCount === 4) { // if 4 logos have been displayed, start a new row
+                    // Start a new row every 4 logos
+                    if (logoCount % 4 === 0) {
                         currentX = 29;
                         currentY += logoHeight + 10;
                     }
